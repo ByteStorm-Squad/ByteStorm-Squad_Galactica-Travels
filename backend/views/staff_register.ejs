@@ -1,0 +1,80 @@
+<%- include("partials/header") -%>
+<%- include("partials/nav_bar") -%>
+
+<h1>Fill in the following details</h1>
+<div>
+  <form action="/staff_register" method="POST">
+    <div>
+      <label for="First_Name">First Name</label>
+      <input type="text" name="First_Name" id="First_Name" required style="display: block"/>
+      <label for="Last_Name">Last Name</label>
+      <input
+        type="text"
+        name="Last_Name"
+        id="Last_Name"
+        required
+        style="display: block"
+        />
+        <br>
+
+      <label for="Gender">Gender</label>
+        <select name="Gender" id="Gender" required>
+          <option selected disabled>--Choose one--</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <br>
+        <br>
+      <label for="DOB">Date of Birth</label>
+      <input type="date" name="DOB" id="DOB" required />
+    </div>
+    <div>
+      <label for="Email">Email</label>
+      <input
+        type="email"
+        name="Email"
+        id="Email"
+        required
+        style="display: block"
+      />
+      <label for="Password">Password</label>
+      <input
+        type="password"
+        name="Password"
+        id="Password"
+        required
+        style="display: block"
+      />
+      <label for="Contact">Mobile</label>
+      <input
+        type="text"
+        name="Contact"
+        id="Contact"
+        required
+        style="display: block"
+        placeholder="(000)-000-0000"
+      >
+      
+      <label for="Assigned_Airport">Assigned_Airport</label>
+      <input type="text" name="Assigned_Airport" id="Assigned_Airport" required style="display: block;"/> 
+      <label for="Country">Country</label>
+      <input type="text" name="Country" id="Country" required style="display: block"/>
+      <br>
+      <label for="Category">Category</label>
+      <select id="Category" name="Category">
+        <option selected disabled>--Choose one--</option>
+        <option value="Manager">Manager</option>
+        <option value="General">General</option>
+        <option value="Pilot">Pilot</option>
+      </select>
+    </div>
+        <center>
+        <button class="create-account-button type="submit">Register</button>
+      </center>
+      </form>
+  </div>
+
+  
+
+  <%- include("partials/footer") -%>
