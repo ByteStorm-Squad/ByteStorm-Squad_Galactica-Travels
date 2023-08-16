@@ -2,12 +2,13 @@ import React from 'react';
 import { NavMenu, Hero, Footer, Memory, Explore, Advertise, Pricings, Banner, Newslatter, Background } from './components';
 import { hero, navlinks, memory, placesAPI, brands, pricingapi, bannerAPI, footerAPI } from './data/travigodata';
 import TextBox from '../src/components/TextBox/TextBox';
+import { SignupPage } from './screens/SignupPage/SignupPage';
 
 const App = () => {
   return (
     <>
-      <Background />
-      <TextBox text="First Name*"/>
+         
+      <Background />  
       {/* <NavMenu navlinks={navlinks} />
       <Memory memory={memory} />
       <Explore title="Explore The Beauty of World" placesAPI={placesAPI} />
