@@ -695,3 +695,9 @@ $$;
 
 CREATE INDEX INDEX_Schedule_Route_ID ON Flight_Schedule (Route_ID);
 CREATE INDEX INDEX_Booking_Schedule_ID ON Booking (Journey_ID);
+
+
+GRANT ALL ON ALL TABLES IN SCHEMA public TO admin;
+GRANT ALL ON ALL SEQUENCES IN SCHEMA public TO admin;
+GRANT ALL ON ALL FUNCTIONS IN SCHEMA public TO admin;
+

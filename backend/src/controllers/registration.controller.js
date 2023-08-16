@@ -1,9 +1,7 @@
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 const RegisteredUser = require("../models/registeredUser.model.js");
-const Staff = require("../models/staff.model.js");
 const userDashboard = require("../models/userDashboard.model.js");
-const managerDashboard = require("../models/managerDashboard.model.js");
 
 exports.getUserByEmail = (req, res) => {
     // Validate request
@@ -25,13 +23,7 @@ exports.getUserByEmail = (req, res) => {
 
     if (data.length === 0) {
     // Add this code to display a popup message and redirect to the login page
-    res.status(200).send(`
-      <script>
-        alert('Invalid email or password!');
-        window.location.href = '/login';
-        
-      </script>
-    `);
+res.status(400).send({ message: "Invalid email or Password!" });
     return;
     }
     // Check if password matches
@@ -51,13 +43,7 @@ exports.getUserByEmail = (req, res) => {
         return;
         }
         else {        
-          res.status(200).send(`
-          <script>
-            alert('Invalid password!');
-            window.location.href = '/login';
-            
-          </script>
-        `);
+          res.status(500).send('Invalid Password!');
         }
 
     });

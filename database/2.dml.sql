@@ -139,13 +139,16 @@ INSERT INTO Customer(Intergalactic_ID, Customer_Type) VALUES('I34509850', 'guest
 ------------------------REGISTERED CUSTOMER ACCOUNT------------------------
 
 
-INSERT INTO Registered_Customer_Account( Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Country, Passport_no, No_of_Bookings, Joined) VALUES ('jzO77wvelMYbRx', 'Emily','Tina' ,'Female', '1989-12-12', 'emily123@gmail.com', '(555) 555-1234', 'General', '148, Hilltop Ave.Far Rockaway, New York' , 'USA' , 'C00002345' , 2 ,'2022-12-24 10:10:53');
-INSERT INTO Registered_Customer_Account( Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Country, Passport_no, No_of_Bookings, Joined) VALUES ( 'iBX3A8p59DBRB', 'Adam','Peter' ,'Male', '1976-02-18', 'adammnb@yahoo.com', '(78) 555-1234', 'Frequent', '56B, Victoria Street, Melbourne' , 'Australia' , 'U0048902' , 6 ,'2022-12-24 11:12:34');
-INSERT INTO Registered_Customer_Account( Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Country, Passport_no, No_of_Bookings, Joined) VALUES ( 'TkVB6JAM684S', 'Chris','Evans', 'Male', '1999-02-22', 'chrisnew@gmail.com', '(202) 588-6500', 'Gold', '148, 45A, Cobblestone Ave.Deland, FL' , 'USA' , 'E00016545' , 12 ,'2022-12-25 08:40:43');
-INSERT INTO Registered_Customer_Account( Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Country, Passport_no, No_of_Bookings, Joined) VALUES ( 'Yhgrt56l@der', 'David', 'Warner', 'Male',  '1976-11-08', 'warn30@gmail.com', '(345) 789-6788', 'General', '234, Victoria Street, Sydney' , 'Australia' , 'J90005678' , 3 ,'2022-12-25 09:12:21');
-INSERT INTO Registered_Customer_Account( Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Country, Passport_no, No_of_Bookings, Joined) VALUES ( '2jHO4KTQQfTnVQt', 'Emma', 'Watson', 'Female',  '2005-12-03', 'emma@yahoo.com', '(234) 234-4532', 'General', '342, Cherry Court, SOUTHAMPTON' , 'UK' , 'E50045673' , 1 ,'2023-01-01 03:15:09');
-INSERT INTO Registered_Customer_Account( Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Country, Passport_no, No_of_Bookings, Joined) VALUES ( 'adFTG54@3JH', 'Albert', 'Einstein', 'Male',  '2006-10-12', 'albeins@gmail.com', '(345) 986-4567', 'General', '813, Howard Street , Chicago' , 'USA' , 'R10003456' , 2 ,'2023-01-02 15:43:11');
-INSERT INTO Registered_Customer_Account( Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Country, Passport_no, No_of_Bookings, Joined) VALUES ( '9GHJ*HJSBad', 'Sheldon', 'George', 'Male',  '2006-02-18', 'sheldon18@gmail.com', '(234) 134-8964', 'General', '45, Shirley Street , Canberra' , 'Australia' , 'D00004536' , 1 ,'2023-01-03 02:34:51');
+INSERT INTO Registered_Customer_Account(Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraftt, Intergalactic_ID, No_Of_Journeys, Joined, display_photo, Total_Payments, Total_Refunds)
+VALUES ('jzO77wvelMYbRx', 'Zara', 'Vega', 'Female', '1995-08-27', 'zara.vega@email.com', '+1234567890', 'General', 'Starbase Alpha, Deck 5', 'Andromeda', 'Proxima Centauri', 'Stellar Cruiser 01', 'I56789088', 3, '2023-07-15 14:30:00', 'profile_zara.jpg', 4500.00, 150.00);
+
+INSERT INTO Registered_Customer_Account(Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraftt, Intergalactic_ID, No_Of_Journeys, Joined, display_photo, Total_Payments, Total_Refunds)
+VALUES ('iBX3A8p59DBRB', 'Xander', 'Nova', 'Male', '1987-04-10', 'xander.nova@email.com', '+9876543210', 'Frequent', 'Orbit Outpost 7, Suite 42', 'Milky Way', 'Sol', 'Starship Voyager', 'I00987897', 7, '2023-07-18 09:15:00', 'profile_xander.jpg', 7500.00, 300.00);
+
+INSERT INTO Registered_Customer_Account(Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraftt, Intergalactic_ID, No_Of_Journeys, Joined, display_photo, Total_Payments, Total_Refunds)
+VALUES ('TkVB6JAM684S', 'Luna', 'Stellaris', 'Female', '2000-11-03', 'luna.stellaris@email.com', '+5551234567', 'Gold', 'Cosmic Haven, Luna City', 'Andromeda', 'Sirius', 'Stellar Cruiser 05', 'I09345262', 12, '2023-07-20 17:45:00', 'profile_luna.jpg', 12000.00, 500.00);
+
+-- You can continue adding more entries as needed
 
 
 ------------------------GUEST CUSTOMER ACCOUNT------------------------

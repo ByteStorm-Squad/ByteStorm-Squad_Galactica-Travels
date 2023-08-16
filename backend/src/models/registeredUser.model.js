@@ -20,7 +20,7 @@ const RegisteredCustomerAccount = function (registeredCustomerAccount) {
 };
 
 RegisteredCustomerAccount.getUserByEmail = function (Email, result) {
-  const sql = "SELECT * FROM RegisteredCustomerAccount WHERE Email = $1";
+  const sql = "SELECT * FROM Registered_Customer_Account WHERE Email = $1";
   const queryParams = [Email];
   pool.query(sql, queryParams, function (err, res) {
     if (err) {
