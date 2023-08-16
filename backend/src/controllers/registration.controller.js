@@ -6,8 +6,7 @@ const userDashboard = require("../models/userDashboard.model.js");
 const managerDashboard = require("../models/managerDashboard.model.js");
 
 exports.getUserByEmail = (req, res) => {
-  console.log(req.body)
-   // Validate request
+    // Validate request
    if (!req.body) {
     res.status(400).send({ message: "Content can not be empty!" });
     return;
@@ -20,12 +19,7 @@ exports.getUserByEmail = (req, res) => {
   RegisteredUser.getUserByEmail(email, (err, data) => {
     if (err) {
     // Add this code to display a popup message and redirect to the login page
-    res.status(200).send(`
-      <script>
-        alert('Error retrieving user');
-        window.location.href = '/login';
-      </script>
-    `);
+    res.status(500).send('Error retrieving user!');
     return;
     }
 

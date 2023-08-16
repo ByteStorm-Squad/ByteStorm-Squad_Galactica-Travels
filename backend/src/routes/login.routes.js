@@ -18,7 +18,6 @@ router.get("/login", function(req, res){
   });
 
 router.post("/login", function(req, res){
-  console.log(req.body)
     registrationController.getUserByEmail(req, res);
 });
 
