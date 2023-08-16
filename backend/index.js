@@ -1,12 +1,17 @@
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
+const fs = require('fs');
 
 const app = express();
 
-const commonRoutes = require('./src/routes/commonRoutes')
-const patientRoutes = require('./src/routes/patientRoutes');
-const professionalRoutes = require('./src/routes/professionalRoutes');
-const systemAdminRoutes = require('./src/routes/systemAdminRoutes')
+// Get all files in the routes folder
+const files = fs.readdirSync('./src/routes');
+
+// Loop through each file and require it
+files.forEach(file => {
+  const routes = require(`./src/routes/${file}`);
+  app.use(routes);
+});
 
 const { swaggerSpecs } = require('./src/services/swagger');
 
@@ -20,11 +25,6 @@ app.use(function (req, res, next) {
 });
 
 ///////////////////// Routes /////////////////////
-app.use(patientRoutes);
-app.use(commonRoutes);
-app.use(professionalRoutes);
-app.use(systemAdminRoutes)
-
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 
 const PORT = process.env.NODE_PORT || 8080;

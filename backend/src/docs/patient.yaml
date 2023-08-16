@@ -13,9 +13,9 @@ paths:
               $ref: '#/components/schemas/Patient'
       responses:
         '200':
-            description: Success
+          description: Success
         '500':
-            description: Error
+          description: Error
 
   /api/patient/create-appointment:
     post:
@@ -33,9 +33,9 @@ paths:
               $ref: '#/components/schemas/Appointment'
       responses:
         '200':
-            description: Success
+          description: Success
         '500':
-            description: Error
+          description: Error
 
   /api/patient/get-appointments:
     get:
@@ -47,9 +47,9 @@ paths:
         - bearerAuth: []
       responses:
         '200':
-            description: Success
+          description: Success
         '500':
-            description: Error
+          description: Error
 
 components:
   schemas:
