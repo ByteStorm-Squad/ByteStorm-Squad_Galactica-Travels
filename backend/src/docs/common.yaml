@@ -1,0 +1,41 @@
+paths:
+  /api/common/login:
+      post:
+        summary: Login user
+        description: Logs user into the system
+        tags:
+          - Common
+        requestBody:
+          description: Created user object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                    description: Username
+                    example: 'JohnDoe'
+                  password:
+                    type: string
+                    description: Password
+                    example: '$2a$10$CwTycUXWue0Thq9StjUM0uG8BnUfbEgXpwGSWmzmOTa7NZl7gLMK2'
+        responses:
+          '200':
+            description: Success
+          '500':
+            description: Error
+
+  /api/common/get-name:
+      get:
+        summary: Get name
+        description: Get name of user
+        tags:
+          - Common
+        security:
+          - bearerAuth: []
+        responses:
+          '200':
+            description: Success
+          '500':
+            description: Error

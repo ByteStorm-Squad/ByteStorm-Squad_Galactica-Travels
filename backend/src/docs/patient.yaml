@@ -1,0 +1,94 @@
+paths:
+  /api/patient/signup:
+    post:
+      summary: Create patient
+      description: Register a new patient
+      tags:
+        - Patient
+      requestBody:
+        description: Created patient object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Patient'
+      responses:
+        '200':
+            description: Success
+        '500':
+            description: Error
+
+  /api/patient/create-appointment:
+    post:
+      summary: Create appointment
+      description: Create an appointment for a patient
+      tags:
+        - Patient
+      security:
+        - bearerAuth: []
+      requestBody:
+        description: Created appointment object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Appointment'
+      responses:
+        '200':
+            description: Success
+        '500':
+            description: Error
+
+  /api/patient/get-appointments:
+    get:
+      summary: Get appointments
+      description: Get all appointments for a patient
+      tags:
+        - Patient
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+            description: Success
+        '500':
+            description: Error
+
+components:
+  schemas:
+    Patient:
+      type: object
+      properties:
+        username:
+          type: string
+          description: Username
+          example: 'JohnDoe'
+        password:
+          type: string
+          description: Password
+          example: '123456'
+        first_name:
+          type: string
+          description: First Name
+          example: 'John'
+        last_name:
+          type: string
+          description: Last Name
+          example: 'Doe'
+        nic:
+          type: string
+          description: NIC
+          example: '2001509042242'
+        address:
+          type: string
+          description: Address
+          example: 'Ruby Street, Colombo'
+        email:
+          type: string
+          description: Email
+          example: 'example@mail.com'
+        gender:
+          type: string
+          description: Gender
+          example: 'Female'
+        dob:
+          type: string
+          description: Date of Birth
+          example: '1999-12-31'
