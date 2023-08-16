@@ -430,7 +430,8 @@ CREATE TABLE Spaceport (
   Code varchar(10),
   Galaxy varchar(40) NOT NULL,
   Solar_System varchar(40) NOT NULL,
-  Spacecraftt varchar(40) NOT NULL,
+  Planet varchar(40) NOT NULL,
+  Description TEXT,
   PRIMARY KEY (Code)
 );
 
@@ -466,6 +467,8 @@ CREATE TABLE Registered_Customer_Account (
   No_Of_Journeys int NOT NULL,
   Joined TIMESTAMP NOT NULL,
   display_photo varchar(100),
+  Total_Payments numeric(10,2),
+  Total_Refunds numeric(10,2),
   PRIMARY KEY (Intergalactic_ID),
   FOREIGN KEY (Intergalactic_ID) REFERENCES customer (Intergalactic_ID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY(User_Type) REFERENCES User_Category(User_Type) ON DELETE CASCADE ON UPDATE CASCADE
@@ -587,6 +590,36 @@ CREATE TABLE Passenger_Pod(
     PRIMARY KEY (Booking_ID, Model_ID, Pod_ID),
     FOREIGN KEY(Booking_ID) REFERENCES Booking(Booking_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(Model_ID, Pod_ID) REFERENCES Spacecraft_Pod(Model_ID, Pod_ID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Cultures (
+  "Code" SERIAL,
+  "Name" varchar(50),
+  "Description" TEXT,
+  "Spaceport" varchar(10),
+  "Popularity_Rating" numeric(10,2),
+  PRIMARY KEY ("Code"),
+  FOREIGN KEY ("Spaceport") REFERENCES "Spaceport"("Code")
+);
+
+CREATE TABLE Attractions (
+  "Code" SERIAL,
+  "Name" varchar(50),
+  "Description" TEXT,
+  "Spaceport" varchar(10),
+  "Popularity_Rating" numeric(10,2),
+  PRIMARY KEY ("Code"),
+  FOREIGN KEY ("Spaceport") REFERENCES "Spaceport"("Code")
+);
+
+CREATE TABLE Events (
+  "Code" SERIAL,
+  "Name" varchar(50),
+  "Description" TEXT,
+  "Spaceport" varchar(10),
+  "Popularity_Rating" numeric(10,2),
+  PRIMARY KEY ("Code"),
+  FOREIGN KEY ("Spaceport") REFERENCES "Spaceport"("Code")
 );
 
 -------------------------SESSION TABLE-------------------------------------
