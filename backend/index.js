@@ -5,6 +5,7 @@ bodyParser = require('body-parser');
 
 const app = express();
 
+app.use(bodyParser.json());
 // Get all files in the routes folder
 const files = fs.readdirSync('./src/routes');
 
@@ -16,11 +17,6 @@ files.forEach(file => {
 
 const { swaggerSpecs } = require('./src/services/swagger');
 
-// support parsing of application/json type post data
-app.use(bodyParser.json());
-
-//support parsing of application/x-www-form-urlencoded post data
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // // Use the middleware to parse the request body
 // app.use(express.json());
@@ -33,7 +29,7 @@ app.use(function (req, res, next) {
 
 ///////////////////// Routes /////////////////////
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
-
+// support parsing of application/json type post data
 const PORT = process.env.NODE_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}!`);

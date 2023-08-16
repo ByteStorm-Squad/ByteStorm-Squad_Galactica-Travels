@@ -6,6 +6,7 @@ const userDashboard = require("../models/userDashboard.model.js");
 const managerDashboard = require("../models/managerDashboard.model.js");
 
 exports.getUserByEmail = (req, res) => {
+  console.log(req.body)
    // Validate request
    if (!req.body) {
     res.status(400).send({ message: "Content can not be empty!" });
