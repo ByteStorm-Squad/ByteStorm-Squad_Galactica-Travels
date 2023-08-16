@@ -10,7 +10,7 @@ const files = fs.readdirSync('./src/routes');
 // Loop through each file and require it
 files.forEach(file => {
   const routes = require(`./src/routes/${file}`);
-  app.use(routes);
+  app.use('/api', routes);
 });
 
 const { swaggerSpecs } = require('./src/services/swagger');
