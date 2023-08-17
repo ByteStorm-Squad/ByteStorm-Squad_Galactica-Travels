@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader/PageHeader';
 
-const AccountPage = () => {
+const JourneysPage = () => {
   return (
     <>
-      <PageHeader title="Account" />
+      <PageHeader title="Journeys" />
     </>
   );
 };
 
-export default AccountPage;
+export default JourneysPage;

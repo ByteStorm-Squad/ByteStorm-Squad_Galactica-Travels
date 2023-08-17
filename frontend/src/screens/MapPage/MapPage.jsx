@@ -1,12 +1,12 @@
 import React from 'react';
 import PageHeader from '../../components/PageHeader/PageHeader';
 
-const AccountPage = () => {
+const MapPage = () => {
   return (
     <>
-      <PageHeader title="Account" />
+      <PageHeader title="Galactic Map" />
     </>
   );
 };
 
-export default AccountPage;
+export default MapPage;
