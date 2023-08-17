@@ -1,0 +1,133 @@
+paths:
+  /api/booking/flightid:
+      post:
+        summary: Book Flight
+        description: Books a specific flight for a user
+        tags:
+          - Common
+        requestBody:
+          description: Created user object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Flight_ID:
+                    type: string
+                    description: Flight_ID
+                    example: 'F005'
+                  firstname:
+                    type: string
+                    description: firstname
+                    example: 'Zara'
+                  lastname:
+                    type: string
+                    description: lastname
+                    example: 'Vega'
+                  gender:
+                    type: string
+                    description: gender
+                    example: 'Female'
+                  Passport_no:
+                    type: string
+                    description: Passport_no
+                    example: 'I56789088'
+                  email:
+                    type: string
+                    description: email
+                    example: 'zara.vega@email.com'
+                  custtype:
+                    type: string
+                    description: custtype
+                    example: 'registered'
+                  Passport_name:
+                    type: string
+                    description: Passport_name
+                    example: '{"Test last"}'
+                  Passno:
+                    type: string
+                    description: Passno
+                    example: '{"3434343"}'
+                  passDOB:
+                    type: string
+                    description: passDOB
+                    example: '{"2023-08-29"}'
+                  'seat-assignment':
+                    type: string
+                    description: 'seat-assignment'
+                    example: '3C'
+                  seatNo:
+                    type: string
+                    description: seatNo
+                    example: '{"3C"}'
+        responses:
+          '200':
+            description: Success
+          '500':
+            description: Error
+/api/booking/createbooking:
+      post:
+        summary: Book Flight
+        description: Books a specific flight for a user
+        tags:
+          - Common
+        requestBody:
+          description: Created user object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Journey_ID:
+                    type: string
+                    description: Flight_ID
+                    example: 'F005'
+                  firstname:
+                    type: string
+                    description: firstname
+                    example: 'Zara'
+                  lastname:
+                    type: string
+                    description: lastname
+                    example: 'Vega'
+                  gender:
+                    type: string
+                    description: gender
+                    example: 'Female'
+                  Intergalactic_ID:
+                    type: string
+                    description: Intergalactic_ID
+                    example: 'I56789088'
+                  email:
+                    type: string
+                    description: email
+                    example: 'zara.vega@email.com'
+                  custtype:
+                    type: string
+                    description: custtype
+                    example: 'registered'
+                  Passport_Name:
+                    type: string
+                    description: Passport_name
+                    example: '{"Test last"}'
+                  Passno:
+                    type: string
+                    description: Passno
+                    example: '{"3434343"}'
+                  passDOB:
+                    type: string
+                    description: passDOB
+                    example: '{"2023-08-29"}'
+                  'seat-assignment':
+                    type: string
+                    description: 'seat-assignment'
+                    example: '3C'
+                  seatNo:
+                    type: string
+                    description: seatNo
+                    example: '{"3C"}'
+        responses:
+          '200':
+            description: Success
+          '500':
+            description: Error

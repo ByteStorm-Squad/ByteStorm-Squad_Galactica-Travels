@@ -11,8 +11,9 @@ const responseValues = {
 
 exports.run = async (req,res, cookies) => {
     try{
+        
         const flightInfo = await Booking.getflightinfo(req);
-        const seat_info = await Booking.getseats(req);
+        const seat_info = await Booking.getPods(req);
         var arrlst = new Array();
         responseValues.seatdetail = [
             {
@@ -29,12 +30,13 @@ exports.run = async (req,res, cookies) => {
           ];
           console.log("Capacities : ",seat_info[0]);
           console.log("Booked seats : ",seat_info[1]);
-          console.log("Model Id : ",seat_info[2]);
-          console.log('User Cookies ' + JSON.stringify(cookies.userRole));
+          console.log("Model Id : ",seat_info[2]);          
           console.log("Flight_info",flightInfo[0]);
           console.log("Seat price",flightInfo[1]);
+          res.status(200).send(JSON.stringify({flightInfo, seat_info}));
+          //res.render('booking');payment screen
+          return;
 
-        res.render("booking", {lst:arrlst ,flightInfo:flightInfo ,seat_info:seat_info, formData: req, docTitle: "BOOKING", data: responseValues, content: 0, userdetail: cookies, userRole: cookies.userRole});
     }catch(err){
         res.send("500");
     }
