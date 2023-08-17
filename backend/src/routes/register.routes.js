@@ -12,6 +12,8 @@ router.post("/register", function(req, res){
     registrationController.createRegisteredUser(req, res);
 });
 
+
+
 // router.get("/staff_register", checkRole('Manager'), function(req, res){
 //     res.render("staff_register", {docTitle: "STAFF REGISTRATION", userRole: req.cookies.userRole});
 // });

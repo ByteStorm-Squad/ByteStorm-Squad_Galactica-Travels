@@ -17,9 +17,12 @@ router.get("/login", function(req, res){
 
   });
 
+
 router.post("/login", function(req, res){
     registrationController.getUserByEmail(req, res);
 });
+
+
 
 router.get("/staff_login", function(req, res){
   res.render('staff_login', {docTitle: "STAFF LOGIN", flash: res.locals.flash , userRole: req.cookies.userRole });

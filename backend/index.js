@@ -1,5 +1,6 @@
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
+const bodyParser = require("body-parser");
 const fs = require('fs');
 
 const app = express();
@@ -10,13 +11,14 @@ const files = fs.readdirSync('./src/routes');
 // Loop through each file and require it
 files.forEach(file => {
   const routes = require(`./src/routes/${file}`);
-  app.use(routes);
+  app.use("/api",routes);
 });
 
 const { swaggerSpecs } = require('./src/services/swagger');
 
 // Use the middleware to parse the request body
-app.use(express.json());
+// app.use(express.json());
+app.use(bodyParser.json())
 // Accept these headers to avoid CORS errors on the client side
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
