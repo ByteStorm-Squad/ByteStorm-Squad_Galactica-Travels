@@ -1,19 +1,21 @@
 import React from 'react';
 import { NavMenu, Hero, Footer, Memory, Explore, Advertise, Pricings, Banner, Newslatter, Background } from './components';
-import { hero, navlinks, memory, placesAPI, brands, pricingapi, bannerAPI, footerAPI } from './data/travigodata';
+import { hero, navlinks, memory, placesAPI, brands, pricingapi, bannerAPI, footerAPI } from './data/dummy_data';
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './screens/Dashboard';
+import Account from './screens/Account';
+import Booking from './screens/Booking';
 
 const App = () => {
   return (
     <>
       <Background />
-      {/* <NavMenu navlinks={navlinks} />
-      <Memory memory={memory} />
-      <Explore title="Explore The Beauty of World" placesAPI={placesAPI} />
-      <Advertise brands={brands} />
-      <Pricings pricingapi={pricingapi} />
-      <Banner bannerAPI={bannerAPI} />
-      <Newslatter />
-      <Footer footerAPI={footerAPI} /> */}
+      <NavMenu />
+      {/* <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/account" element={<Account />} />
+        <Route path="/booking" element={<Booking />} />
+      </Routes> */}
     </>
   );
 };
