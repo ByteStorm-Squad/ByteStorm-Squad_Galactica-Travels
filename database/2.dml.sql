@@ -140,13 +140,13 @@ INSERT INTO Customer(Intergalactic_ID, Customer_Type) VALUES('I34509850', 'guest
 
 
 INSERT INTO Registered_Customer_Account(Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraftt, Intergalactic_ID, No_Of_Journeys, Joined, display_photo, Total_Payments, Total_Refunds)
-VALUES ('jzO77wvelMYbRx', 'Zara', 'Vega', 'Female', '1995-08-27', 'zara.vega@email.com', '+1234567890', 'General', 'Starbase Alpha, Deck 5', 'Andromeda', 'Proxima Centauri', 'Stellar Cruiser 01', 'I56789088', 3, '2023-07-15 14:30:00', 'profile_zara.jpg', 4500.00, 150.00);
+VALUES ('$2b$10$CFbLNbM4YvkG071N4AZDWeRUuzF2N/KSLn6Kd00OBrtOmlTlDIubW', 'Zara', 'Vega', 'Female', '1995-08-27', 'zara.vega@email.com', '+1234567890', 'General', 'Starbase Alpha, Deck 5', 'Andromeda', 'Proxima Centauri', 'Stellar Cruiser 01', 'I56789088', 3, '2023-07-15 14:30:00', 'profile_zara.jpg', 4500.00, 150.00);
 
 INSERT INTO Registered_Customer_Account(Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraftt, Intergalactic_ID, No_Of_Journeys, Joined, display_photo, Total_Payments, Total_Refunds)
 VALUES ('iBX3A8p59DBRB', 'Xander', 'Nova', 'Male', '1987-04-10', 'xander.nova@email.com', '+9876543210', 'Frequent', 'Orbit Outpost 7, Suite 42', 'Milky Way', 'Sol', 'Starship Voyager', 'I00987897', 7, '2023-07-18 09:15:00', 'profile_xander.jpg', 7500.00, 300.00);
 
 INSERT INTO Registered_Customer_Account(Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraftt, Intergalactic_ID, No_Of_Journeys, Joined, display_photo, Total_Payments, Total_Refunds)
-VALUES ('TkVB6JAM684S', 'Luna', 'Stellaris', 'Female', '2000-11-03', 'luna.stellaris@email.com', '+5551234567', 'Gold', 'Cosmic Haven, Luna City', 'Andromeda', 'Sirius', 'Stellar Cruiser 05', 'I09345262', 12, '2023-07-20 17:45:00', 'profile_luna.jpg', 12000.00, 500.00);
+VALUES ('$2b$10$CFbLNbM4YvkG071N4AZDWeRUuzF2N/KSLn6Kd00OBrtOmlTlDIubW', 'Luna', 'Stellaris', 'Female', '2000-11-03', 'luna.stellaris@email.com', '+5551234567', 'Gold', 'Cosmic Haven, Luna City', 'Andromeda', 'Sirius', 'Stellar Cruiser 05', 'I09345262', 12, '2023-07-20 17:45:00', 'profile_luna.jpg', 12000.00, 500.00);
 
 -- You can continue adding more entries as needed
 
@@ -159,18 +159,6 @@ INSERT INTO Guest_Customer_Account( First_Name, Last_Name, Gender, DOB, Passport
 INSERT INTO Guest_Customer_Account( First_Name, Last_Name, Gender, DOB, Passport_no, Email, Mobile) VALUES ('Olivia', 'Rodrigo', 'Female', '2006-02-12','A09345262', 'olive12@yahoo.com', '(324) 234-7778');
 INSERT INTO Guest_Customer_Account( First_Name, Last_Name, Gender, DOB, Passport_no, Email, Mobile) VALUES ('Jenna', 'Ortega', 'Female', '2005-12-31','C00986543', 'jennort@yahoo.com', '(432) 675-5412');
 INSERT INTO Guest_Customer_Account( First_Name, Last_Name, Gender, DOB, Passport_no, Email, Mobile) VALUES ('Shawn', 'Mendes', 'Male', '1998-11-05','D34509850', 'shawn_men@gmail.com', '(543) 342-1235');
-
-
-
-
-
-------------------------STAFF------------------------
-
-
-INSERT INTO Staff(Category,Password,First_Name,Last_Name,Contact,Email,DOB,Gender,Assigned_Airport,Country) values ('Admin','$2b$10$wmlK/FgCEsoX8m3cf.z/ruRIVXFZh8wo6TjqRvlaV9RJkUJ0lkgYG','Joseph','Andrew','(456) 675-7854','andrew@bairways.com','1968-6-17','Male','CGK','USA');
-INSERT INTO Staff(Category,Password,First_Name,Last_Name,Contact,Email,DOB,Gender,Assigned_Airport,Country) values ('Manager','OxtfsvI1TCSOtc1','Kumar','Swami','(852) 675-7854','swami@bairways.com','1972-1-27','Male','CGK','India');
-INSERT INTO Staff(Category,Password,First_Name,Last_Name,Contact,Email,DOB,Gender,Assigned_Airport,Country) values ('General','J42YgQyfMmlgQlH','Gavin','Anotio','(123) 675-7854','antonio@bairways.com','1980-7-29','Male','DMK','Thailand');
-INSERT INTO Staff(Category,Password,First_Name,Last_Name,Contact,Email,DOB,Gender,Assigned_Airport,Country) values ('Pilot','kWyofTsJpWmkFHx','Thomas','Seamus','(65) 675-7854','seamus@bairways.com','1959-8-3','Male','SIN','Singapore');
 
 
 ------------------------FLIGHT SCHEDULE------------------------
