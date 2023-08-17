@@ -223,6 +223,17 @@ VALUES ('F012', 'G015', 'S005', '2023-02-05', '10:00:00', 'Delayed-Departure', 4
 -- INSERT INTO Passenger_Seat VALUES (8, 2, '2A', 600.00, 'Jenna Ortega', 'C00986543','2005-12-31');
 -- INSERT INTO Passenger_Seat VALUES (9, 2, '2A', 600.00, 'Shawn Mendes', 'D34509850','1998-11-05');
 
+INSERT INTO public.events ("Name", "Description", "Spaceport", "Popularity_Rating") VALUES 
+('Galactic Summit', 'A meeting of representatives from various galaxies.', 'ALP', 4.5),
+('Interstellar Race', 'A race featuring the fastest spaceships in the universe.', 'MIL', 5.0),
+('Celestial Festival', 'A celebration of celestial art and culture.', 'CEN', 3.9),
+('Nebula Expo', 'Exhibition of the latest technology in space exploration.', 'ORI', 4.7),
+('Warp Drive Summit', 'A conference on the advancements in warp drive technology.', 'TRI', 4.8),
+('Galactic Trade Fair', 'A fair showcasing products from various planets and galaxies.', 'VEG', 4.0),
+('Intergalactic Music Fest', 'A music festival featuring artists from across the galaxies.', 'LEO', 5.0),
+('Spaceport Opening Ceremony', 'Opening ceremony of the new spaceport in Nebulaar.', 'SCU', 3.8),
+('Zero-Gravity Sports Tournament', 'A sports tournament held in zero-gravity conditions.', 'PIN', 4.9),
+('Aquatic Research Conference', 'A conference dedicated to aquatic life research.', 'HYD', 4.6);
 
 /*
 
