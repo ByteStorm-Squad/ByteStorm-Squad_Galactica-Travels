@@ -68,7 +68,7 @@ CREATE TYPE Flight_Status_Enum AS ENUM(
 
  CREATE TYPE Spacecraft_status_Enum AS ENUM( 
  'On-Ground',
- 'In-Air');  
+ 'In-Orbit');  
 
 CREATE TYPE Booking_Status_Enum AS ENUM(
 'Not paid',
