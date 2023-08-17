@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Home, Person, SpaceDashboard, RocketLaunch, Map, WbSunny } from '@mui/icons-material';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,29 +13,39 @@ const NavMenu = () => {
           <WbSunny />
         </div>
         <span style={{ '--i': 1 }}>
-          <a href="#">
-            <Map />
-          </a>
+          <div>
+            <Link to="/map">
+              <Map />
+            </Link>
+          </div>
         </span>
         <span style={{ '--i': 2 }}>
-          <a href="#">
-            <RocketLaunch />
-          </a>
+          <div>
+            <Link to="/journeys">
+              <RocketLaunch />
+            </Link>
+          </div>
         </span>
         <span style={{ '--i': 3 }}>
-          <a href="#">
-            <SpaceDashboard />
-          </a>
+          <div>
+            <Link to="/booking">
+              <SpaceDashboard />
+            </Link>
+          </div>
         </span>
         <span style={{ '--i': 4 }}>
-          <a href="#">
-            <Person />
-          </a>
+          <div>
+            <Link to="/account">
+              <Person />
+            </Link>
+          </div>
         </span>
         <span style={{ '--i': 5 }}>
-          <a href="#">
-            <Home />
-          </a>
+          <div>
+            <Link to="/">
+              <Home />
+            </Link>
+          </div>
         </span>
       </div>
     </nav>

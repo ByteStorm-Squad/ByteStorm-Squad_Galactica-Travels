@@ -16,7 +16,7 @@ nav .nav-content{
   transform: rotate(-45deg);
 }
 .nav-content .toggle-btn,
-.nav-content span a{
+.nav-content span div{
   height: 50px;
   width: 50px;
   display: flex;
@@ -45,7 +45,7 @@ nav.open .nav-content span{
   transform: rotate(calc(var(--i) * (360deg/20) + 35deg)) translateY(160px);
   opacity: 1;
 }
-.nav-content span a{
+.nav-content span div{
   text-decoration: none;
   transform: rotate(45deg);
 }
@@ -56,6 +56,6 @@ nav.open .nav-content span{
   opacity: 0.8;
   transition: 0.2s;
 }
-.nav-content span a:hover i{
+.nav-content span div:hover i{
   opacity: 1;
 }
