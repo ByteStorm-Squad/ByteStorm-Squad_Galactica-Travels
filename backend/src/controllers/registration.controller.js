@@ -4,8 +4,7 @@ const RegisteredUser = require("../models/registeredUser.model.js");
 const userDashboard = require("../models/userDashboard.model.js");
 
 exports.getUserByEmail = (req, res) => {
-  hash1 = bcrypt.hashSync("abc123", saltRounds);
-  console.log(hash1);
+
   // Validate request
   if (!req.body) {
     res.status(400).send({ message: "Content can not be empty!" });

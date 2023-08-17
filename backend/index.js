@@ -1,3 +1,4 @@
+require("dotenv").config({ path: './src/config/.env' });
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
 const fs = require('fs');
@@ -30,7 +31,7 @@ app.use(function (req, res, next) {
 ///////////////////// Routes /////////////////////
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 // support parsing of application/json type post data
-const PORT = process.env.NODE_PORT || 8080;
+const PORT = process.env.BACKEND_PORT || 8080;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}!`);
 });
