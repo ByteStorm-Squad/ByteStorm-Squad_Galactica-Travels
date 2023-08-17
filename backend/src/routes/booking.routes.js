@@ -33,10 +33,4 @@ router.post('/booking/flightid',function(req,res){
 
 router.post('/booking/createbooking',bookingController.createbooking);
 
-router.get('/payment',bookingController.getpayment);
-
-router.post('/payment/success',bookingController.paymentSuccess);
-
-router.post('/payment/cancel',bookingController.cancelbooking)
-
 module.exports = router;

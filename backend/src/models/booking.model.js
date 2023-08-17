@@ -15,8 +15,7 @@ var Booking = function (booking) {
     this.Booking_Date = new Date();
 };
 
-Booking.getpaymentstatus = async function (bookingid) {
-    console.log("let see", bookingid)
+Booking.getpaymentstatus = async function (bookingid) {    
     let status = await pool.query("SELECT booking_status FROM Booking WHERE booking_id=$1", [bookingid]);
     console.log("status :::::", status.rows[0])
     return status.rows[0];

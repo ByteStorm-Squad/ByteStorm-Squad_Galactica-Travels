@@ -360,7 +360,8 @@ BEGIN
 
     SELECT Model_ID INTO val_model_id FROM Spacecraft_Instance NATURAL JOIN Flight_Schedule WHERE Flight_Schedule.Journey_ID=val_Journey_ID;
 
-    INSERT INTO Booking(Intergalactic_ID, Journey_ID, model_id, Pod_ids,Pod_Price,Discount ,Final_Price, Booking_Status) VALUES(val_Intergalactic_ID, val_Journey_ID, val_model_id, PodNo,tot_Price,val_discount_percentage,Final_Price, 'Not paid') RETURNING Booking_ID INTO val_booking_id;
+    -- INSERT INTO Booking(Intergalactic_ID, Journey_ID, model_id, Pod_ids,Pod_Price,Discount ,Final_Price, Booking_Status) VALUES(val_Intergalactic_ID, val_Journey_ID, val_model_id, PodNo,tot_Price,val_discount_percentage,Final_Price, 'Not paid') RETURNING Booking_ID INTO val_booking_id;
+    INSERT INTO Booking(Intergalactic_ID, Journey_ID, model_id, Pod_ids,Pod_Price,Discount ,Final_Price, Booking_Status) VALUES(val_Intergalactic_ID, val_Journey_ID, val_model_id, PodNo,1000,0.1,900, 'Not paid') RETURNING Booking_ID INTO val_booking_id;
 
 
     WHILE j < pass_count+1 LOOP
