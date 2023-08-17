@@ -594,34 +594,35 @@ CREATE TABLE Passenger_Pod(
 );
 
 CREATE TABLE Cultures (
-  "Code" SERIAL,
-  "Name" varchar(50),
-  "Description" TEXT,
-  "Spaceport" varchar(10),
-  "Popularity_Rating" numeric(10,2),
-  PRIMARY KEY ("Code"),
-  FOREIGN KEY ("Spaceport") REFERENCES "Spaceport"("Code")
+  Code SERIAL,
+  Name varchar(50),
+  Description TEXT,
+  Spaceport varchar(10),
+  Popularity_Rating numeric(10,2),
+  PRIMARY KEY (Code),
+  FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
 
 CREATE TABLE Attractions (
-  "Code" SERIAL,
-  "Name" varchar(50),
-  "Description" TEXT,
-  "Spaceport" varchar(10),
-  "Popularity_Rating" numeric(10,2),
-  PRIMARY KEY ("Code"),
-  FOREIGN KEY ("Spaceport") REFERENCES "Spaceport"("Code")
+  Code SERIAL,
+  Name varchar(50),
+  Description TEXT,
+  Spaceport varchar(10),
+  Popularity_Rating numeric(10,2),
+  PRIMARY KEY (Code),
+  FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
 
 CREATE TABLE Events (
-  "Code" SERIAL,
-  "Name" varchar(50),
-  "Description" TEXT,
-  "Spaceport" varchar(10),
-  "Popularity_Rating" numeric(10,2),
-  PRIMARY KEY ("Code"),
-  FOREIGN KEY ("Spaceport") REFERENCES "Spaceport"("Code")
+  Code SERIAL,
+  Name varchar(50),
+  Description TEXT,
+  Spaceport varchar(10),
+  Popularity_Rating numeric(10,2),
+  PRIMARY KEY (Code),
+  FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
+
 
 -------------------------SESSION TABLE-------------------------------------
 
