@@ -39,11 +39,11 @@ export const brands = [
 ];
 
 export const navlinks = [
-  { link: "Home", id: "home" },
-  { link: "About", id: "about" },
-  { link: "Explore", id: "explore" },
-  { link: "Pricing", id: "pricing" },
-  { link: "Contact", id: "contact" },
+  { link: "Dashboard", id: "dashboard" },
+  { link: "Account", id: "account" },
+  { link: "Booking", id: "booking" },
+  { link: "Journeys", id: "journeys" },
+  { link: "Galactic Map", id: "map" },
 ];
 
 export const hero = {
