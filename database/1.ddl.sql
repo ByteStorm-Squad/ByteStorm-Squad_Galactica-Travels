@@ -255,13 +255,13 @@ DECLARE
     val_route_id VARCHAR(4);
     val_model_id int;
     val_Spacecraft_id VARCHAR(4);
-    val_traveler_Class_ID int;
+    val_traveller_Class_ID int;
     val_Price numeric;
 BEGIN
     SELECT Route_ID, Spacecraft_ID INTO val_route_id, val_Spacecraft_id FROM Flight_Schedule WHERE Journey_ID = val_Journey_ID;
     SELECT Model_ID INTO val_model_id FROM Spacecraft_instance WHERE Spacecraft_ID = val_Spacecraft_id;
-    SELECT Spacecraft_Pod.traveler_Class_ID INTO val_traveler_Class_ID FROM Spacecraft_Pod WHERE Model_ID = val_model_id AND Pod_ID = val_Pod_id;
-    SELECT Price into val_Price FROM Pod_Price WHERE Route_ID = val_route_id AND Class_ID = val_traveler_Class_ID;
+    SELECT Spacecraft_Pod.traveller_Class_ID INTO val_traveller_Class_ID FROM Spacecraft_Pod WHERE Model_ID = val_model_id AND Pod_ID = val_Pod_id;
+    SELECT Price into val_Price FROM Pod_Price WHERE Route_ID = val_route_id AND Class_ID = val_traveller_Class_ID;
     RETURN val_Price;
 END
 $CODE$
@@ -463,11 +463,11 @@ CREATE TABLE Registered_Customer_Account (
   Address varchar(80)NOT NULL,
   Galaxy varchar(50)NOT NULL,
   Solar_System varchar(50)NOT NULL,
-  Spacecraftt varchar(50)NOT NULL,
+  Spacecraft varchar(50)NOT NULL,
   Intergalactic_ID varchar(9)NOT NULL,
   No_Of_Journeys int NOT NULL,
   Joined TIMESTAMP NOT NULL,
-  display_photo varchar(100),
+  Display_Photo varchar(100),
   Total_Payments numeric(10,2),
   Total_Refunds numeric(10,2),
   PRIMARY KEY (Intergalactic_ID),
@@ -489,7 +489,7 @@ CREATE TABLE Guest_Customer_Account (
 
 CREATE TABLE Traveller_Class (
   Class_ID SERIAL,
-  class_name class_type_Enum NOT NULL UNIQUE,
+  Class_Name class_type_Enum NOT NULL UNIQUE,
   PRIMARY KEY (Class_ID)
 );
 
@@ -523,9 +523,9 @@ CREATE TABLE Spacecraft_Instance (
 CREATE TABLE Spacecraft_Pod (
   Model_ID int NOT NULL ,
   Pod_ID varchar(10) NOT NULL,
-  Traveler_Class_ID int NOT NULL,
+  Traveller_Class_ID int NOT NULL,
   PRIMARY KEY (Model_ID, Pod_ID),
-  FOREIGN KEY (Traveler_Class_ID) REFERENCES Traveller_Class(Class_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (Traveller_Class_ID) REFERENCES Traveller_Class(Class_ID) ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (Model_ID) REFERENCES Spacecraft_Type(Model_ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
