@@ -1,7 +1,7 @@
 const pool = require("./db.js");
 
 const RegisteredCustomerAccount = function (registeredCustomerAccount) {
-  this.Intergalactic_ID = registeredCustomerAccount.Intergalactic_ID;
+  this.Customer_ID = registeredCustomerAccount.Customer_ID;
   this.Password = registeredCustomerAccount.Password;
   this.First_Name = registeredCustomerAccount.First_Name;
   this.Last_Name = registeredCustomerAccount.Last_Name;
@@ -13,13 +13,10 @@ const RegisteredCustomerAccount = function (registeredCustomerAccount) {
   this.Address = registeredCustomerAccount.Address;
   this.Galaxy = registeredCustomerAccount.Galaxy;
   this.SolarSystem = registeredCustomerAccount.SolarSystem;
-  this.Spacecraft = registeredCustomerAccount.Spacecraft;
   this.Planet = registeredCustomerAccount.Planet;
+  this.Intergalactic_ID = registeredCustomerAccount.Intergalactic_ID;
   this.No_of_Journeys = registeredCustomerAccount.No_of_Journeys;
   this.Joined = registeredCustomerAccount.Joined;
-  this.Display_Photo = registeredCustomerAccount.Display_Photo;
-  this.Total_Payments = registeredCustomerAccount.Total_Payments;
-  this.Total_Refunds = registeredCustomerAccount.Total_Refunds;
 };
 
 RegisteredCustomerAccount.getUserByEmail = function (Email, result) {
@@ -59,7 +56,7 @@ RegisteredCustomerAccount.createUser = function (newCustomer, result) {
           });
           return;
         }
-        const sql2 = "INSERT INTO registeredCustomerAccount (Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraft, Intergalactic_ID, No_of_Journeys, Joined, Display_Photo, Total_Payments, Total_Refunds) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, CURRENT_TIMESTAMP, $15, $16, 0, 0)";
+        const sql2 = "INSERT INTO registeredCustomerAccount (Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Passport_no, No_of_Journeys, Joined, display_photo) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP, $13)";
         const queryParams2 = [
           newCustomer.Password,
           newCustomer.First_Name,
@@ -71,11 +68,8 @@ RegisteredCustomerAccount.createUser = function (newCustomer, result) {
           newCustomer.User_Type,
           newCustomer.Address,
           newCustomer.Galaxy,
-          newCustomer.Solar_System,
-          newCustomer.Spacecraft,
           newCustomer.Intergalactic_ID,
           newCustomer.No_of_Journeys,
-          newCustomer.Display_Photo,
         ];
         client.query(sql2, queryParams2, function (err, res) {
           if (err) {
