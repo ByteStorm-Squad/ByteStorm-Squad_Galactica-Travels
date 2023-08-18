@@ -1,7 +1,7 @@
 'use strict';
 
 const e = require('express');
-const Staff_work = require('../models/Staff_work.model');
+const Staff_work = require('../models/staff_work.model');
 
 const responseValues = {
     arrivalflights : 0,
