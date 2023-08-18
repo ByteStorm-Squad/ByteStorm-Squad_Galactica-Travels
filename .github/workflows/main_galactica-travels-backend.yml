@@ -25,8 +25,7 @@ jobs:
         uses: azure/sql-action@v2.2
         with:
           connection-string: 'Server=galactica-travels-backend-server.postgres.database.azure.com;Port=5432;Database=galactica-travels-backend-database;User ID=xscdpwowui;Password=Y6U1730ASP8VVV4S$'
-          path: './database/*.sql'
-          action: 'publish'
+          path: './database/setup.sql'
           arguments: '/p:DropObjectsNotInSource=true' # Optional properties and parameters for SqlPackage Publish
 
       - name: Install npm packages
