@@ -21,7 +21,15 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: npm install, build, and test
+      - name: Set up SQL database
+        uses: azure/sql-action@v2.2
+        with:
+          connection-string: ${{ "Server=galactica-travels-backend-server.postgres.database.azure.com;Port=5432;Database=galactica-travels-backend-database,User ID=xscdpwowui;Password=Y6U1730ASP8VVV4S$" }}
+          path: './database/*.sql'
+          action: 'publish'
+          arguments: '/p:DropObjectsNotInSource=true' # Optional properties and parameters for SqlPackage Publish
+
+      - name: Install npm packages
         run: |
           cd backend
           npm install
@@ -31,14 +39,6 @@ jobs:
         with:
           name: node-app
           path: backend/
-
-      - name: Set up SQL database
-        uses: azure/sql-action@v2.2
-        with:
-          connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
-          path: './database/*.sql'
-          action: 'publish'
-          arguments: '/p:DropObjectsNotInSource=true' # Optional properties and parameters for SqlPackage Publish
 
   deploy:
     runs-on: ubuntu-latest
@@ -55,7 +55,7 @@ jobs:
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
+        uses: azure/webapps-deploy@v3
         with:
           app-name: 'galactica-travels-backend'
           slot-name: 'Production'
