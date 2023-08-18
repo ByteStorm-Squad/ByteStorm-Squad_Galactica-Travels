@@ -17,7 +17,7 @@ COPY . .
 RUN npm run build
 
 # Use a lightweight web server to serve the static files
-FROM nginx:alpine
+FROM nginx:1-alpine-slim
 
 # Copy the built static files from the previous stage into the Nginx web server's root directory
 COPY --from=build /app/dist /usr/share/nginx/html

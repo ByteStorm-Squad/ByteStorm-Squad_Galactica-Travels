@@ -4,8 +4,8 @@ services:
   galactica-db:
     image: "postgres:9.6-alpine"
     container_name: galactica-postgres
-    volumes:
-      - ./database/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    # volumes:
+    #   - ./database/setup.sql:/docker-entrypoint-initdb.d/setup.sql
     ports:
       - 5432:5432
     environment:
@@ -14,10 +14,11 @@ services:
       - POSTGRES_PASSWORD=1234
 
   galactica-backend:
-    build: ./backend
+    # build: ./backend
+    image: "firestorm9/galactica-backend:latest"
     container_name: galactica-backend
     environment:
-      - NODE_DEBUG=cluster,net,http,fs,tls,module,timers
+      - NODE_DEBUG=cluster,net,http,fs
       - DB_SERVER=galactica-db
     ports:
       - 8080:8080
@@ -25,7 +26,8 @@ services:
       - galactica-db
 
   galactica-frontend:
-    build: ./frontend
+    # build: ./frontend
+    image: "firestorm9/galactica-frontend:latest"
     container_name: galactica-frontend
     ports:
       - 80:80
