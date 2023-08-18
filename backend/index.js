@@ -38,5 +38,5 @@ app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 // support parsing of application/json type post data
 
 app.listen(HOST, PORT, () => {
-  console.log(`Server running on port ${HOST}:${PORT}!`);
+  console.log(`Server running on host:port ${HOST}:${PORT}!`);
 });
