@@ -585,9 +585,9 @@ CREATE TABLE Passenger_Pod(
     Model_ID int,
     Pod_ID varchar(10),
     Price numeric(10, 2), 
-    name varchar(100) NOT NULL,
+    Name varchar(100) NOT NULL,
     Intergalactic_ID varchar(20) NOT NULL,
-    dob date NOT NULL,
+    DOB date NOT NULL,
     PRIMARY KEY (Booking_ID, Model_ID, Pod_ID),
     FOREIGN KEY(Booking_ID) REFERENCES Booking(Booking_ID) ON DELETE CASCADE ON UPDATE CASCADE,
     FOREIGN KEY(Model_ID, Pod_ID) REFERENCES Spacecraft_Pod(Model_ID, Pod_ID) ON DELETE CASCADE ON UPDATE CASCADE

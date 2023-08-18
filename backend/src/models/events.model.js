@@ -8,4 +8,4 @@ const Event = function (event) {
     this.Popularity_Rating = event.Popularity_Rating;
 }
 
-modeul.exports = Event;
+module.exports = Event;

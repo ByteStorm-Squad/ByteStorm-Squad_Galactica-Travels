@@ -10,7 +10,7 @@ const Search = function (search) {
     this.Departure_Time = search.Departure_Time;
 }
 Search.getFlightSchedule = function (result) {
-    sql = "SELECT * FROM search_table ";
+    sql = "SELECT * FROM Search_View ";
     pool.query(sql, function (err, res) {
         if (err) {
             console.log("error: ", err);
