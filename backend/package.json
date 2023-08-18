@@ -6,7 +6,7 @@
   "author": "kernelpanic",
   "license": "ISC",
   "scripts": {
-    "dev": "nodemon ./src/index.js",
+    "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "keywords": [],
