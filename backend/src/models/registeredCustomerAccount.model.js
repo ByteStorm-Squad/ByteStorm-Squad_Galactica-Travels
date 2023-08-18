@@ -56,7 +56,7 @@ RegisteredCustomerAccount.createUser = function (newCustomer, result) {
           });
           return;
         }
-        const sql2 = "INSERT INTO registeredCustomerAccount (Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Passport_no, No_of_Journeys, Joined, display_photo) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, CURRENT_TIMESTAMP, $13)";
+        const sql2 = "INSERT INTO Registered_Customer_Account (Password, First_Name, Last_Name, Gender, DOB, Email, Mobile, User_Type, Address, Galaxy, Solar_System, Spacecraft, Intergalactic_ID, No_of_Journeys, Joined, Display_Photo, Total_Payments, Total_Refunds) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, CURRENT_TIMESTAMP, $15, $16, 0, 0)";
         const queryParams2 = [
           newCustomer.Password,
           newCustomer.First_Name,
