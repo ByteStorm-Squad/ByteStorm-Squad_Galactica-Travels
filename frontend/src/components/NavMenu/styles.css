@@ -1,22 +1,25 @@
-nav{
+nav {
   position: absolute;
   top: 0px;
-  right: 0;
-  width: 80px;
-  height: 300px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;
   cursor: grab;
+  pointer-events: none;
+  z-index: 2;
 }
-nav .nav-content{
+nav .nav-content {
   display: flex;
   align-items: center;
   justify-content: center;
+  pointer-events: all;
   transform: rotate(-45deg);
 }
 .nav-content .toggle-btn,
-.nav-content span div{
+.nav-content span div {
   height: 50px;
   width: 50px;
   display: flex;
@@ -25,7 +28,7 @@ nav .nav-content{
   border-radius: 50%;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
 }
-.nav-content .toggle-btn{
+.nav-content .toggle-btn {
   font-size: 35px;
   color: #ffd902;
   z-index: 100;
@@ -33,29 +36,29 @@ nav .nav-content{
   transform: rotate(-225deg);
   transition: all 0.6s ease;
 }
-nav.open .toggle-btn{
+nav.open .toggle-btn {
   transform: rotate(0deg);
 }
-.nav-content span{
+.nav-content span {
   position: absolute;
   transition: all 0.6s ease;
   opacity: 0;
 }
-nav.open .nav-content span{
-  transform: rotate(calc(var(--i) * (360deg/20) + 35deg)) translateY(160px);
+nav.open .nav-content span {
+  transform: rotate(calc(var(--i) * (360deg / 20) + 35deg)) translateY(160px);
   opacity: 1;
 }
-.nav-content span div{
+.nav-content span div {
   text-decoration: none;
   transform: rotate(45deg);
 }
-.nav-content span svg{
+.nav-content span svg {
   font-size: 30px;
   color: #ffffff;
-  transform: rotate(calc(var(--i) * (360deg/ -20) - 35deg));
+  transform: rotate(calc(var(--i) * (360deg / -20) - 35deg));
   opacity: 0.8;
   transition: 0.2s;
 }
-.nav-content span div:hover i{
+.nav-content span div:hover i {
   opacity: 1;
 }
