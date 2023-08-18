@@ -1,0 +1,33 @@
+version: '3'
+services:
+
+  galactica-db:
+    image: "postgres:9.6-alpine"
+    container_name: galactica-postgres
+    volumes:
+      - ./database/setup.sql:/docker-entrypoint-initdb.d/setup.sql
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_DB=spaceline_res
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=1234
+
+  galactica-backend:
+    build: ./backend
+    container_name: galactica-backend
+    environment:
+      - NODE_DEBUG=cluster,net,http,fs,tls,module,timers
+      - DB_SERVER=galactica-db
+    ports:
+      - 8080:8080
+    links:
+      - galactica-db
+
+  galactica-frontend:
+    build: ./frontend
+    container_name: galactica-frontend
+    ports:
+      - 80:80
+    links:
+      - galactica-backend
