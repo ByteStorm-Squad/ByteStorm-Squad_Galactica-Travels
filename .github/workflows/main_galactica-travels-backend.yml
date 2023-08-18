@@ -24,7 +24,7 @@ jobs:
       - name: Set up SQL database
         uses: azure/sql-action@v2.2
         with:
-          connection-string: 'Host=galactica-travels-backend-server.postgres.database.azure.com;Port=5432;Database=galactica-travels-backend-database;User=xscdpwowui;Password=Y6U1730ASP8VVV4S$'
+          connection-string: 'Server=galactica-travels-backend-server.postgres.database.azure.com;Port=5432;Database=galactica-travels-backend-database;User=xscdpwowui;Password=Y6U1730ASP8VVV4S$'
           path: './database/*.sql'
           action: 'publish'
           arguments: '/p:DropObjectsNotInSource=true' # Optional properties and parameters for SqlPackage Publish
