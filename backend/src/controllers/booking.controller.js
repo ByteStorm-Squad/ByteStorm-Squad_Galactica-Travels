@@ -3,7 +3,7 @@
 
 const e = require('express');
 const Booking = require('../models/booking.model');
-const Flight = require('../models/flight.model')
+// const Flight = require('../models/flight.model')
 
 const responseValues = {
     seatdetail: 0, 
