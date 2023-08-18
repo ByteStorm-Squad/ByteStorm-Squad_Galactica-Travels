@@ -1,16 +1,20 @@
 const pool = require("./db.js");
 
-const Flight = function(flight){
-    this.FlightID = flight.FlightID;
-    this.ArrivalDate = flight.ArrivalDate;
-    this.ArrivalTime = flight.ArrivalTime;
-    this.DepartureDate = flight.DepartureDate;
-    this.DepartureTime = flight.DepartureTime;
-    this.AircraftID = flight.AircraftID;
-    this.PilotID = flight.PilotID;
-    this.Origin = flight.Origin;
-    this.Destination = flight.Destination;    
+const Journey = function (journey) {
+    this.Journey_ID = journey.Journey_ID;
+    this.Route_ID = journey.Route_ID;
+    this.Spacecraft_ID = journey.Spacecraft_ID;
+    this.ArrivalDate = journey.ArrivalDate;
+    this.ArrivalTime = journey.ArrivalTime;
+    this.DepartureDate = journey.DepartureDate;
+    this.DepartureTime = journey.DepartureTime;
+    this.Flight_Status = journey.Flight_Status;
+    this.Flight_Percent = journey.Flight_Percent;
 }
+
+
+module.exports = Journey;
+
 
 Flight.getFlightCount= function(destination,start,end,result){
     sql = "SELECT count(flight_schedule.flight_id) as count FROM flight_schedule left join route on flight_schedule.route_id=route.route_id where route.destination=$1 and flight_schedule.departure_Date between $2 and $3";
