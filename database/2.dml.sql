@@ -195,35 +195,7 @@ INSERT INTO Flight_Schedule(Journey_ID, Route_ID, Spacecraft_ID, Departure_Date,
 VALUES ('F012', 'G015', 'S005', '2023-02-05', '10:00:00', 'Delayed-Departure', 40.00);
 
 
--- ---------------------BOOKING------------------------
-
-
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('C00002345','F002','{"1A"}',2,600.00,0.00,600.00,'Paid','2022-10-27');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('U0048902','F002','{"4A"}',2,500.00,5.00,475.00,'Paid','2022-11-05');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('G56789088','F003','{"12A","13A"}',3,900.00,0.00,900.00,'Paid','2022-11-12');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('B00987897','F002','{"1B"}',2,600.00,0.00,600.00,'Paid','2022-11-02');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('D00004536','F001','{"1A"}',1,600.00,0.00,600.00,'Paid','2022-11-04');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('R10003456','F002','{"2A"}',2,600.00,0.00,600.00,'Paid','2022-11-05');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('A09345262','F032','{"3A"}',2,600.00,0.00,600.00,'Paid','2023-01-25');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('C00986543','F035','{"11A"}',2,600.00,0.00,600.00,'Paid','2023-02-02');
--- INSERT into booking (Passport_no,Flight_ID ,Seat_IDs,Model_ID,Seat_Price,Discount ,Final_Price,Booking_Status,Booking_Date) values ('D34509850','F037','{"10B"}',2,600.00,0.00,600.00,'Paid','2023-02-03');
-
-
--- ---------------------PASSENGER SEAT------------------------
-
-
--- INSERT INTO Passenger_Seat VALUES(1, 2, '1A', 600.00, 'Emily Tina','C00002345','1989-12-12');
--- INSERT INTO Passenger_Seat VALUES (2, 2, '4A', 475.00, 'Adam Peter','U0048902','1976-02-18');
--- INSERT INTO Passenger_Seat VALUES (3, 3, '12A', 450.00, 'Ram Kumar','G56789088','1978-05-09');
--- INSERT INTO Passenger_Seat VALUES (4, 2, '1B', 600.00, 'Millie Brown','B00987897','2000-09-05');
--- INSERT INTO Passenger_Seat VALUES (4, 3, '13A', 450.00, 'Ram Kumar', 'G56789088','1978-05-09');
--- INSERT INTO Passenger_Seat VALUES (5, 1, '1A', 600.00, 'Sheldon George', 'D00004536','2006-02-18');
--- INSERT INTO Passenger_Seat VALUES (6, 2, '2A', 600.00, 'Albert Einstein', 'R10003456','2006-10-12');
--- INSERT INTO Passenger_Seat VALUES (7, 2, '2A', 600.00, 'Olivia Rodrigo', 'A09345262','2006-02-12');
--- INSERT INTO Passenger_Seat VALUES (8, 2, '2A', 600.00, 'Jenna Ortega', 'C00986543','2005-12-31');
--- INSERT INTO Passenger_Seat VALUES (9, 2, '2A', 600.00, 'Shawn Mendes', 'D34509850','1998-11-05');
-
-INSERT INTO public.events ("Name", "Description", "Spaceport", "Popularity_Rating") VALUES 
+INSERT INTO Events (Name, Description, Spaceport, Popularity_Rating) VALUES 
 ('Galactic Summit', 'A meeting of representatives from various galaxies.', 'ALP', 4.5),
 ('Interstellar Race', 'A race featuring the fastest spaceships in the universe.', 'MIL', 5.0),
 ('Celestial Festival', 'A celebration of celestial art and culture.', 'CEN', 3.9),
@@ -235,6 +207,21 @@ INSERT INTO public.events ("Name", "Description", "Spaceport", "Popularity_Ratin
 ('Zero-Gravity Sports Tournament', 'A sports tournament held in zero-gravity conditions.', 'PIN', 4.9),
 ('Aquatic Research Conference', 'A conference dedicated to aquatic life research.', 'HYD', 4.6);
 
+-- Inserting into Attractions table
+INSERT INTO Attractions (Name, Description, Spaceport, Popularity_Rating)
+VALUES ('Celestial Observatory', 'Observatory with telescopes offering unparalleled views of galaxies.', 'ORI', 9.7);
+INSERT INTO Attractions (Name, Description, Spaceport, Popularity_Rating)
+VALUES ('Luminous Gardens', 'Bioluminescent flora from across the universe in a stunning garden.', 'TRI', 8.9);
+INSERT INTO Attractions (Name, Description, Spaceport, Popularity_Rating)
+VALUES ('Zero-G Thrills', 'Amusement park with gravity-defying rides and experiences.', 'PIN', 9.4);
+
+-- Inserting into Cultures table
+INSERT INTO Cultures (Name, Description, Spaceport, Popularity_Rating)
+VALUES ('Lumarians', 'Advanced civilization focused on harnessing energy from stars.', 'CEN', 7.6);
+INSERT INTO Cultures (Name, Description, Spaceport, Popularity_Rating)
+VALUES ('Nebulans', 'Nomadic spacefaring culture with a deep connection to nebulae.', 'LEO', 8.3);
+INSERT INTO Cultures (Name, Description, Spaceport, Popularity_Rating)
+VALUES ('Aquafarians', 'Water-based society known for their intricate underwater cities.', 'HYD', 8.1);
 /*
 
   ___  ___   ___    ___  ___  ___   _   _  ___  ___    ___    _    _     _     ___ 
