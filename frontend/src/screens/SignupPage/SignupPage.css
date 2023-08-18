@@ -129,6 +129,10 @@
     top: 0;
     width: 370px;
   }
+
+  .signup-page .datepicker{
+    color: white;
+  }
   
   .signup-page .calendar-month {
     height: 24px !important;
