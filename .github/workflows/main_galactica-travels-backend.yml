@@ -32,6 +32,14 @@ jobs:
           name: node-app
           path: backend/
 
+      - name: Set up SQL database
+      - uses: azure/sql-action@v2.2
+        with:
+          connection-string: ${{ secrets.AZURE_SQL_CONNECTION_STRING }}
+          path: './database/*.sql'
+          action: 'publish'
+          arguments: '/p:DropObjectsNotInSource=true' # Optional properties and parameters for SqlPackage Publish
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
