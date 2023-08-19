@@ -39,3 +39,70 @@ paths:
             description: Success
           '500':
             description: Error
+
+  /api/register:
+      post:
+        summary: Register a new customer account
+        tags: 
+           - Registration
+        requestBody:
+          description: Register object
+          required: true
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  password:
+                    type: string
+                    description: Password
+                    example: Password123!
+                  first_name:
+                    type: string
+                    description: First name
+                    example: John
+                  last_name:
+                    type: string
+                    description: Last name  
+                    example: Doe
+                  gender:
+                    type: string
+                    description: Gender
+                    example: Male
+                  dob:
+                    type: string
+                    example: 1990-01-01
+                  email:
+                    type: string
+                    example: john.doe@example.com
+                  mobile:
+                    type: string
+                    example: '123-456-7890'
+                  user_type:
+                    type: string
+                    example: General
+                  address:
+                    type: string
+                    example: '123 Main St'
+                  galaxy:
+                    type: string
+                    example: 'Milky Way'
+                  solar_system:
+                    type: string
+                    example: 'Solar System'
+                  spacecraft:
+                    type: string
+                    example: 'Spaceship 1'
+                  intergalactic_id:
+                    type: string
+                    example: 'ID12345'
+                  display_photo:
+                    type: string
+                    example: 'url_to_image'
+        responses:
+          200:
+            description: User created successfully
+          400:
+            description: Content cannot be empty
+          500:
+            description: There was an error creating the user
