@@ -9,32 +9,30 @@ const responseValues = {
     seatdetail: 0, 
     customerseatdetail : 0
   }
-
-exports.run = async (req,res, cookies) => {
+exports.getFlights = async (req,res, cookies) => {
     try{
         
         const flightInfo = await Booking.getflightinfo(req);
+          
+          console.log("Flight_info",flightInfo[0]);
+          console.log("Seat price",flightInfo[1]);
+          res.status(200).send(JSON.stringify({"Flight_info" : flightInfo[0], "Seat price" : flightInfo[1]}));
+          //res.render('booking');payment screen
+          return;
+
+    }catch(err){
+        res.send("500");
+    }
+}
+exports.getPods = async (req,res, cookies) => {
+    try{        
+    
         const seat_info = await Booking.getPods(req);
-        var arrlst = new Array();
-        responseValues.seatdetail = [
-            {
-              booking_id: null,
-              passport_no: null,
-              flight_id: null,
-              seat_id:null,
-              seat_price: null,
-              discount: null,
-              final_price: null,
-              booking_status: null,
-              booking_date: null
-            }
-          ];
+
           console.log("Capacities : ",seat_info[0]);
           console.log("Booked seats : ",seat_info[1]);
           console.log("Model Id : ",seat_info[2]);          
-          console.log("Flight_info",flightInfo[0]);
-          console.log("Seat price",flightInfo[1]);
-          res.status(200).send(JSON.stringify({flightInfo, seat_info}));
+               res.status(200).send(JSON.stringify({"Capacities" : seat_info[0], "Booked seats" : seat_info[1], "Model Id" : seat_info[2]}));
           //res.render('booking');payment screen
           return;
 

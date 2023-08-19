@@ -1,10 +1,10 @@
-paths:
-  /api/booking/flightid:
+paths:  
+  /api/booking/getJourneyByID:
       post:
-        summary: Book Flight
-        description: Books a specific flight for a user
+        summary: Gets Journey details by an id
+        description: Gets Journey details by an id
         tags:
-          - Common
+          - Booking
         requestBody:
           description: Created user object
           content:
@@ -12,21 +12,44 @@ paths:
               schema:
                 type: object
                 properties:
-                  Flight_ID:
+                  Journey_ID:
                     type: string
-                    description: Flight_ID
+                    description: Journey_ID
                     example: 'F005'                  
         responses:
           '200':
             description: Success
           '500':
             description: Error
+  /api/booking/getPodsbyJourney:
+      post:
+        summary: Gets Booked Pods and overall Pod details by Journey
+        description: Gets Booked Pods and overall Pod details by Journey
+        tags:
+          - Booking
+        requestBody:
+          description: Created user object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  Journey_ID:
+                    type: string
+                    description: Journey_ID
+                    example: 'F005'                  
+        responses:
+          '200':
+            description: Success
+          '500':
+            description: Error
+
   /api/booking/createbooking:
         post:
           summary: Book Flight
           description: Books a specific flight for a user
           tags:
-            - Common
+            - Booking
           requestBody:
             description: Created user object
             content:
@@ -93,7 +116,7 @@ paths:
         summary: Get Next Flight
         description: Get Next Flight
         tags:
-          - Common
+          - Booking
         requestBody:
           description: Created user object
           content:
