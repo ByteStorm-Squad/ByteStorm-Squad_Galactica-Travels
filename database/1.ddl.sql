@@ -56,7 +56,11 @@ SET TIME ZONE 'Etc/UTC';
  |______||_| \_| \____/ |_|  |_||_____/
 */
 ----------ENUM----------------------------
-
+CREATE TYPE Payment_Type_Enum AS ENUM(
+'Credit Card',
+'PayPal',
+'Cash'
+);
 
 CREATE TYPE Flight_Status_Enum AS ENUM(
 'Scheduled',
@@ -580,6 +584,14 @@ CREATE TABLE Booking  (
   PRIMARY KEY (Booking_ID) ,
   FOREIGN KEY (Intergalactic_ID) REFERENCES Customer(Intergalactic_ID)ON DELETE CASCADE ON UPDATE CASCADE,
   FOREIGN KEY (Journey_ID) REFERENCES Flight_Schedule(Journey_ID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE Payment (
+  Payment_ID SERIAL,
+  Booking_ID int NOT NULL,
+  Payment_Method Payment_Method_Enum NOT NULL,
+  PRIMARY KEY (Payment_ID),
+  FOREIGN KEY (Booking_ID) REFERENCES Booking(Booking_ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 CREATE TABLE Passenger_Pod(
