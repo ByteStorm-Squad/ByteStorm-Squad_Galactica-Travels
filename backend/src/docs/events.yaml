@@ -1,0 +1,145 @@
+openapi: '3.0.0'
+info:
+  version: '1.0.0'
+  title: Events API
+  description: API to manage events
+paths:
+  /api/events:
+    post:
+      summary: Create Event
+      description: Creates a new event in the system
+      tags:
+        - Events
+      requestBody:
+        description: Event object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: integer
+                  description: Code of the event
+                  example: 1001
+                Name:
+                  type: string
+                  description: Name of the event
+                  example: 'Galactic Fair'
+                Description:
+                  type: string
+                  description: Description of the event
+                  example: 'A description about this event.'
+                Spaceport:
+                  type: string
+                  description: Spaceport related to the event
+                  example: 'SP02'
+                Popularity_Rating:
+                  type: integer
+                  description: Popularity rating of the event
+                  example: 5
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+    get:
+      summary: Get All Events
+      description: Retrieve all events in the system
+      tags:
+        - Events
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Event'
+        '500':
+          description: Error
+
+  /api/events/{code}:
+    get:
+      summary: Get Event by Code
+      description: Retrieve event information by code
+      tags:
+        - Events
+      parameters:
+        - name: code
+          in: path
+          description: Code of the event
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+    put:
+      summary: Update Event
+      description: Update event information by code
+      tags:
+        - Events
+      parameters:
+        - name: code
+          in: path
+          description: Code of the event
+          required: true
+          schema:
+            type: integer
+            example: 1
+      requestBody:
+        description: Updated event object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Event'
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+    delete:
+      summary: Delete Event
+      description: Delete event by code
+      tags:
+        - Events
+      parameters:
+        - name: code
+          in: path
+          description: Code of the event
+          required: true
+          schema:
+            type: integer
+            example: 1
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+components:
+  schemas:
+    Event:
+      type: object
+      properties:
+        Code:
+          type: integer
+          description: Code of the event
+        Name:
+          type: string
+          description: Name of the event
+        Description:
+          type: string
+          description: Description of the event
+        Spaceport:
+          type: string
+          description: Spaceport related to the event
+        Popularity_Rating:
+          type: integer
+          description: Popularity rating of the event

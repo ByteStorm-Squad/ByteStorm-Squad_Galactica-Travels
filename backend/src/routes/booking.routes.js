@@ -19,10 +19,10 @@ router.get('/booking',checkRole('user'),function(req,res){
 })
 
 router.post('/booking/flightid',function(req,res){
-    const flightid = req.body.flight_id;
-    console.log(flightid)
-    console.log('User Cookies ' + JSON.stringify(req.cookies.user));
+   const flightid = req.body.Flight_ID;
+    
    try{
+        console.log(req.body)
        //const flightid = flight_id;
        bookingController.run(flightid,res,req.cookies);
    }catch(err){
@@ -32,11 +32,5 @@ router.post('/booking/flightid',function(req,res){
 })
 
 router.post('/booking/createbooking',bookingController.createbooking);
-
-router.get('/payment',bookingController.getpayment);
-
-router.post('/payment/success',bookingController.paymentSuccess);
-
-router.post('/payment/cancel',bookingController.cancelbooking)
 
 module.exports = router;

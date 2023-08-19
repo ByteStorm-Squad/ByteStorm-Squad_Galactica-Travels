@@ -1,0 +1,142 @@
+paths:
+  /api/cultures/create:
+    post:
+      summary: Create Culture
+      description: Creates a new culture in the system
+      tags:
+        - Cultures
+      requestBody:
+        description: Culture object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: string
+                  description: Code of the culture
+                  example: 'C001'
+                Name:
+                  type: string
+                  description: Name of the culture
+                  example: 'Interstellar Culture'
+                Description:
+                  type: string
+                  description: Description of the culture
+                  example: 'A description about this culture.'
+                Spaceport:
+                  type: string
+                  description: Spaceport related to the culture
+                  example: 'Spaceport Alpha'
+                Popularity_Rating:
+                  type: integer
+                  description: Popularity rating of the culture
+                  example: 5
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+  /api/cultures:
+    get:
+      summary: Get All Cultures
+      description: Retrieve all cultures in the system
+      tags:
+        - Cultures
+      responses:
+        '200':
+          description: Success
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    Code:
+                      type: string
+                      description: Code of the culture
+                      example: 'C001'
+                    Name:
+                      type: string
+                      description: Name of the culture
+                      example: 'Interstellar Culture'
+                    Description:
+                      type: string
+                      description: Description of the culture
+                      example: 'A description about this culture.'
+                    Spaceport:
+                      type: string
+                      description: Spaceport related to the culture
+                      example: 'Spaceport Alpha'
+                    Popularity_Rating:
+                      type: integer
+                      description: Popularity rating of the culture
+                      example: 5
+        '500':
+          description: Error
+
+  /api/cultures/{code}:
+    get:
+      summary: Get Culture by Code
+      description: Retrieve culture information by code
+      tags:
+        - Cultures
+      parameters:
+        - name: code
+          in: path
+          description: Code of the culture
+          required: true
+          schema:
+            type: integer
+            example: 1001
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+    put:
+      summary: Update Culture
+      description: Update culture information by code
+      tags:
+        - Cultures
+      parameters:
+        - name: code
+          in: path
+          description: Code of the culture
+          required: true
+          schema:
+            type: integer
+            example: 1001
+      requestBody:
+        description: Updated culture object
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Culture'
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+    delete:
+      summary: Delete Culture
+      description: Delete culture by code
+      tags:
+        - Cultures
+      parameters:
+        - name: code
+          in: path
+          description: Code of the culture
+          required: true
+          schema:
+            type: integer
+            example: 1004
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
