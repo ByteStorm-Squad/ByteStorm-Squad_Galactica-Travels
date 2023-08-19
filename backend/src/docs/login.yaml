@@ -15,11 +15,11 @@ paths:
                   email:
                     type: string
                     description: Email
-                    example: 'JohnDoe'
+                    example: 'zara.vega@email.com'
                   password:
                     type: string
                     description: Password
-                    example: '$2a$10$CwTycUXWue0Thq9StjUM0uG8BnUfbEgXpwGSWmzmOTa7NZl7gLMK2'
+                    example: 'abc123'
         responses:
           '200':
             description: Success

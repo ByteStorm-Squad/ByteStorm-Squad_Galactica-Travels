@@ -1,0 +1,136 @@
+paths:
+  /api/attractions/create:
+    post:
+      summary: Create Attraction
+      description: Creates a new attraction in the system
+      tags:
+        - Attractions
+      requestBody:
+        description: Attraction object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: integer
+                  description: Code of the attraction
+                  example: 1001
+                Name:
+                  type: string
+                  description: Name of the attraction
+                  example: "Interstellar Observatory"
+                Description:
+                  type: string
+                  description: Description of the attraction
+                  example: "A breathtaking observatory with views of distant galaxies."
+                Spaceport:
+                  type: string
+                  description: Spaceport related to the attraction
+                  example: "ALP"
+                Popularity_Rating:
+                  type: numeric
+                  description: Popularity rating of the attraction
+                  example: 9.5
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+  /api/attractions:
+    get:
+      summary: Get All Attractions
+      description: Retrieve all attractions in the system
+      tags:
+        - Attractions
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+  /api/attractions/{code}:
+    get:
+      summary: Get Attraction by Code
+      description: Retrieve attraction information by code
+      tags:
+        - Attractions
+      parameters:
+        - name: code
+          in: path
+          description: Code of the attraction
+          required: true
+          schema:
+            type: integer
+            example: 1001
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+    put:
+      summary: Update Attraction
+      description: Update attraction information by code
+      tags:
+        - Attractions
+      parameters:
+        - name: code
+          in: path
+          description: Code of the attraction
+          required: true
+          schema:
+            type: integer
+            example: 1001
+      requestBody:
+        description: Updated attraction object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                Code:
+                  type: integer
+                  description: Code of the culture
+                  example: 1001
+                Name:
+                  type: string
+                  description: Name of the culture
+                  example: "Nebula Amusement Park"
+                Description:
+                  type: string
+                  description: Description of the culture
+                  example: "A thrilling amusement park located near the Great Carina Nebula."
+                Spaceport:
+                  type: string
+                  description: Spaceport related to the culture
+                  example: "SCU"
+                Popularity_Rating:
+                  type: integer
+                  description: Popularity rating of the culture
+                  example: 5
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
+
+    delete:
+      summary: Delete Attraction
+      description: Delete attraction by code
+      tags:
+        - Attractions
+      parameters:
+        - name: code
+          in: path
+          description: Code of the attraction
+          required: true
+          schema:
+            type: integer
+            example: 1001
+      responses:
+        '200':
+          description: Success
+        '500':
+          description: Error
