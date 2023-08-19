@@ -12,7 +12,7 @@ import Explorepage from './screens/ExplorePage/ExplorePage';
 
 const App = () => {
   return (
-    <>
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
       <Background />
       <NavMenu />
       <Routes>
@@ -24,7 +24,7 @@ const App = () => {
         <Route path="/explore" element={<Explorepage />} />
         <Route path="/signup" element={<SignupPage />} />
       </Routes>
-    </>
+    <LocalizationProvider/>
   );
 };
 
