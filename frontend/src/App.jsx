@@ -6,6 +6,8 @@ import Dashboard from './screens/Dashboard/Dashboard';
 import AccountPage from './screens/AccountPage/AccountPage';
 import BookingPage from './screens/BookingPage/BookingPage';
 import { SignupPage } from './screens/SignupPage/SignupPage';
+import JourneysPage from './screens/JourneysPage/JourneysPage';
+import MapPage from './screens/MapPage/MapPage';
 
 const App = () => {
   return (
@@ -16,6 +18,8 @@ const App = () => {
         <Route path="/" element={<Dashboard />} />
         <Route path="/account" element={<SignupPage />} />
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/journeys" element={<JourneysPage />} />
+        <Route path="/map" element={<MapPage />} />
       </Routes>
     </>
   );
