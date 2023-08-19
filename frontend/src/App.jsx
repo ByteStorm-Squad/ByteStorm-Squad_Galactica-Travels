@@ -9,7 +9,6 @@ import { SignupPage } from './screens/SignupPage/SignupPage';
 import JourneysPage from './screens/JourneysPage/JourneysPage';
 import MapPage from './screens/MapPage/MapPage';
 import Profile from './screens/Profile/Profile';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 // import MapPage from './screens/MapPage/MapPage';
 import Explorepage from './screens/ExplorePage/ExplorePage';
 
