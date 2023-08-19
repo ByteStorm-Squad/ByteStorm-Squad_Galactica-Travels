@@ -42,7 +42,7 @@ export const DetailCard = ({ title, detail, ishilighted, style }) => {
     maxHeight: 100,
     borderWidth: 2,
     borderStyle: 'solid',
-    borderColor: ishilighted ? 'yellow' : 'black',
+    borderColor: ishilighted ? '#D7D000' : 'black',
   };
   return (
     <div style={{ ...defaultStyles, ...style }}>
@@ -63,7 +63,7 @@ export const DonutChart = ({height,width,data}) => {
     legend: 'none',
     backgroundColor: 'transparent',
     pieSliceText: 'none',
-    colors: ["#FF5733", "#33FF57"],
+    colors: ["#06007F", "#2C7F00"],
   };
 
   return (
