@@ -1,37 +1,22 @@
 import React from 'react';
 import { CalendarMonth } from '../../icons/CalendarMonth/CalendarMonth';
-import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import Box from '@mui/material/Box';
+import PageHeader from '../../components/PageHeader/PageHeader';
+import TextBox from '../../components/TextBox/TextBox';
+import DateField from '../../components/DateField/DateField';
 
 export const SignupPage = () => {
   return (
     <>
-      <Box sx={{ minWidth: 240 }}>
-        {/* Doubling the width by adjusting minWidth */}
-        <LocalizationProvider dateAdapter={AdapterDayjs} className="input-text-here">
-          <DemoContainer components={['DatePicker']}>
-            <DatePicker
-              label="Date of Birth*"
-              sx={{
-                '& .MuiInputBase-input': {
-                  color: 'white',
-                },
-                '& .MuiInputBase-root': {
-                  backgroundColor: '#333',
-                },
-                '& .MuiInputLabel-root': {
-                  color: 'white',
-                },
-                width: '200%', // Doubling the width
-                // Add more custom styles as needed
-              }}
-            />
-          </DemoContainer>
-        </LocalizationProvider>
-      </Box>
+      <PageHeader title="Sign Up" />
+      <div className="my-8 mx-8">
+        <h2>Signup Details</h2>
+      </div>
+      <TextBox text={'First Name *'} />
+      <TextBox text={'Last Name *'} />
+      <DateField text={'Date of Birth *'} />
+      <TextBox text={'Inter Galactic ID'} />
+      <TextBox text={'Contact Identifier'} />
+      <TextBox text={'Home Location'} />
     </>
   );
 };
