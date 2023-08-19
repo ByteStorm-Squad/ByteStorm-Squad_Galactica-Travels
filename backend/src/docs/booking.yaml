@@ -88,7 +88,7 @@ paths:
             '500':
               description: Error
   
-  /api/booking/getnextflight:
+  /api/booking/getnextflights:
       post:
         summary: Get Next Flight
         description: Get Next Flight

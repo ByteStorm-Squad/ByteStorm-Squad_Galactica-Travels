@@ -95,12 +95,12 @@ exports.getBookingCount = (req, res, cookies) => {
   }
 }
 
-exports.getNextFlight = (req, res, cookies) => {
+exports.getNextFlights = (req, res, cookies) => {
   try {
     const route = req.route;
     const [origin, destination] = route.split(" to ");
     console.log(origin, destination);
-    Journey.getNextFlight(origin, destination, (err, result) => {
+    Journey.getNextFlights(origin, destination, (err, result) => {
       if (err) {
         console.log("Model Error: " + err);
         res.send("500");

@@ -32,9 +32,9 @@ router.post('/booking/flightid', function (req, res) {
     }
 })
 
-router.post('/booking/getnextflight', function (req, res) {
+router.post('/booking/getnextflights', function (req, res) {
     try {
-        flightController.getNextFlight(req.body, res, req.cookies);
+        flightController.getNextFlights(req.body, res, req.cookies);
 
     } catch (err) {
         console.log(err);

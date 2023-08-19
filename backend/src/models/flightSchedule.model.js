@@ -82,6 +82,32 @@ Journey.getFlightRoutes = function (result) {
 
 }
 
+Journey.getNextFlights = function (origin, destination, result) {
+    // const current_date = new Date();
+    // current_date = current_date.toISOString().slice(0,10);
+    // console.log("Current Date: "+current_date);
+    sql = "SELECT flight_schedule.journey_id, flight_schedule.route_id, flight_schedule.spacecraft_id, flight_schedule.flight_status," +
+        "flight_schedule.departure_date, flight_schedule.arrival_date " +
+        "FROM flight_schedule " +
+        "WHERE flight_schedule.journey_id IN " +
+        "(SELECT flight_schedule.journey_id FROM flight_schedule " +
+        "LEFT JOIN route on flight_schedule.route_id=route.route_id " +
+        "WHERE route.origin=$1 AND route.destination=$2 AND " +
+        "flight_schedule.departure_date > '2020-05-01');"
+    // "flight_schedule.departure_date > '2020-05-01');"
+    const queryParams = [origin, destination];
+    pool.query(sql, queryParams, function (err, res) {
+        if (err) {
+            console.log("error: ", err);
+            return result(err, null);
+        }
+        else {
+            console.log("Passenger Details: ", res.rows);
+            return result(null, res.rows);
+        }
+    });
+}
+
 Journey.getNextFlight = function (origin, destination, result) {
     // const current_date = new Date();
     // current_date = current_date.toISOString().slice(0,10);
@@ -93,7 +119,7 @@ Journey.getNextFlight = function (origin, destination, result) {
         "(SELECT flight_schedule.journey_id FROM flight_schedule " +
         "LEFT JOIN route on flight_schedule.route_id=route.route_id " +
         "WHERE route.origin=$1 AND route.destination=$2 AND " +
-        "flight_schedule.departure_date > '2020-05-01' LIMIT 1);"
+        "flight_schedule.departure_date > CURRENT_DATE LIMIT 1);"
     // "flight_schedule.departure_date > '2020-05-01' LIMIT 1);"
     const queryParams = [origin, destination];
     pool.query(sql, queryParams, function (err, res) {
@@ -107,6 +133,7 @@ Journey.getNextFlight = function (origin, destination, result) {
         }
     });
 }
+
 
 Journey.getPastFlight = function (origin, destination, result) {
     // const current_date = new Date();
