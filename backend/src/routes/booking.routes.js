@@ -32,9 +32,10 @@ router.post('/booking/flightid', function (req, res) {
     }
 })
 
-router.get('/booking/flights', checkRole("user"), function (req, res) {
+router.post('/booking/getnextflight', function (req, res) {
     try {
-        flightController.getNextFlight(req, res, req.cookies);
+        flightController.getNextFlight(req.body, res, req.cookies);
+
     } catch (err) {
         console.log(err);
         res.send("500");
