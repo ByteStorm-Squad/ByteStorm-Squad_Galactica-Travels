@@ -8,6 +8,8 @@ import BookingPage from './screens/BookingPage/BookingPage';
 import { SignupPage } from './screens/SignupPage/SignupPage';
 import JourneysPage from './screens/JourneysPage/JourneysPage';
 import MapPage from './screens/MapPage/MapPage';
+import Profile from './screens/Profile/Profile';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 const App = () => {
   return (
@@ -20,6 +22,7 @@ const App = () => {
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/journeys" element={<JourneysPage />} />
         <Route path="/map" element={<MapPage />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
     </>
   );
