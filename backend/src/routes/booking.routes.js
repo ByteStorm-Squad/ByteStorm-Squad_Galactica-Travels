@@ -2,35 +2,46 @@ const express = require('express');
 const router = express.Router()
 const checkRole = require('../middleware/auth');
 const bookingController = require('../controllers/booking.controller');
+const flightController = require('../controllers/flight.controller');
 const responseValues = {
-    seatdetail: 0, 
-  }
+    seatdetail: 0,
+}
 
 // Default Booking Page
-router.get('/booking',checkRole('user'),function(req,res){
+router.get('/booking', checkRole('user'), function (req, res) {
     const flightid = req.body;
-    try{
+    try {
         //const flightid = flight_id;
-        bookingController.run(flightid,res,req.cookies.userRole);
-    }catch(err){
+        bookingController.run(flightid, res, req.cookies.userRole);
+    } catch (err) {
         console.log(err);
         res.send("500");
     }
 })
 
-router.post('/booking/flightid',function(req,res){
-   const flightid = req.body.Flight_ID;
-    
-   try{
+router.post('/booking/flightid', function (req, res) {
+    const flightid = req.body.Flight_ID;
+
+    try {
         console.log(req.body)
-       //const flightid = flight_id;
-       bookingController.run(flightid,res,req.cookies);
-   }catch(err){
-       console.log(err);
-       res.send("500");
-   }
+        //const flightid = flight_id;
+        bookingController.run(flightid, res, req.cookies);
+    } catch (err) {
+        console.log(err);
+        res.send("500");
+    }
 })
 
-router.post('/booking/createbooking',bookingController.createbooking);
+router.post('/booking/getnextflights', function (req, res) {
+    try {
+        flightController.getNextFlights(req.body, res, req.cookies);
+
+    } catch (err) {
+        console.log(err);
+        res.send("500");
+    }
+})
+
+router.post('/booking/createbooking', bookingController.createbooking);
 
 module.exports = router;
