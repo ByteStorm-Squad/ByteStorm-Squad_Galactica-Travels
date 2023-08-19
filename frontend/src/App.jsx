@@ -24,8 +24,6 @@ const App = () => {
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/journeys" element={<JourneysPage />} />
         <Route path="/map" element={<MapPage />} />
-        {/* <Route path="/profile" element={<Profile />} /> */}
-        <Route path="/map" element={<Explorepage/>} />
       </Routes>
     </>
   );
