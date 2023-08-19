@@ -432,6 +432,7 @@ CREATE TABLE Spaceport (
   Galaxy varchar(40) NOT NULL,
   Solar_System varchar(40) NOT NULL,
   Planet varchar(40) NOT NULL,
+  Image varchar(100),
   Description TEXT,
   PRIMARY KEY (Code)
 );
@@ -506,6 +507,7 @@ CREATE TABLE Spacecraft_Type (
   P_Pods_Per_Row int NOT NULL,
   Max_Load numeric(12,2) NOT NULL,
   Fuel_Capacity numeric(12,2) NOT NULL,
+  Image varchar(100),
   PRIMARY KEY (Model_ID)
 );
 
@@ -599,6 +601,7 @@ CREATE TABLE Cultures (
   Description TEXT,
   Spaceport varchar(10),
   Popularity_Rating numeric(10,2),
+  Image varchar(100),
   PRIMARY KEY (Code),
   FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
@@ -609,6 +612,7 @@ CREATE TABLE Attractions (
   Description TEXT,
   Spaceport varchar(10),
   Popularity_Rating numeric(10,2),
+  Image varchar(100),
   PRIMARY KEY (Code),
   FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
@@ -619,6 +623,7 @@ CREATE TABLE Events (
   Description TEXT,
   Spaceport varchar(10),
   Popularity_Rating numeric(10,2),
+  Image varchar(100),
   PRIMARY KEY (Code),
   FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
