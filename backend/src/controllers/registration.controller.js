@@ -45,34 +45,34 @@ exports.getUserByEmail = (req, res) => {
 
 exports.createRegisteredUser = (req, res) => {
   // Validate request
-
   if (!req.body) {
     res.status(400).send({ message: "Content cannot be empty!" });
     return;
   }
+  
   bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
     // Create a new registered user
     const registeredUser = new RegisteredUser({
-      password: hash,
-      first_name: req.body.first_name,
-      last_name: req.body.last_name,
-      gender: req.body.gender,
-      dob: req.body.date_of_birth,
-      email: req.body.email,
-      mobile: req.body.mobile,
-      user_type: req.body.user_type,
-      address: req.body.address,
-      country: req.body.country,
-      passport_no: req.body.passport_no,
-      no_of_bookings: 0,
-      display_photo: req.body.display_photo,
+      Password: hash,
+      First_Name: req.body.first_name,
+      Last_Name: req.body.last_name,
+      Gender: req.body.gender,
+      DOB: req.body.dob,
+      Email: req.body.email,
+      Mobile: req.body.mobile,
+      User_Type: req.body.user_type,
+      Address: req.body.address,
+      Galaxy: req.body.galaxy,
+      Solar_System: req.body.solar_system,
+      Spacecraft: req.body.spacecraft,
+      Intergalactic_ID: req.body.intergalactic_id,
+      No_of_Journeys: 0,
+      Display_Photo: req.body.display_photo
     });
-
 
     // Save registered user in the database
     RegisteredUser.createUser(registeredUser, (err, data) => {
       if (err) {
-
         res.status(500).send("<p>There was an error creating the user. Redirecting to registration page in 3 seconds...</p>" +
           "<script>setTimeout(function () { window.location.href = '/register'; }, 3000);</script>");
       }
@@ -84,9 +84,8 @@ exports.createRegisteredUser = (req, res) => {
     });
 
   });
-
-
 }
+
 
 exports.registerstaff = (req, res) => {
   // Validate request
