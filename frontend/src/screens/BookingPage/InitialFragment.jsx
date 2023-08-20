@@ -8,7 +8,6 @@ const InitialFragment = ({ incrementFragmentNo }) => {
       <div className="my-8 mx-8">
         <h2>Passenger Details</h2>
       </div>
-      <TextBox text={'Number of Passengers'} />
       <TextBox text={'Departure'} />
       <TextBox text={'Destination'} />
       <div className="flex justify-center">
