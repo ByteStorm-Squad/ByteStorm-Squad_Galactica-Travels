@@ -26,6 +26,7 @@ const TextBox = ({ text, type }) => {
     color: 'white',
     fontSize: '15px',
     outline: 'none', // Remove default focus outline
+    padding: '9px'
   };
 
   return (
