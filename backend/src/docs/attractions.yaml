@@ -12,10 +12,6 @@ paths:
             schema:
               type: object
               properties:
-                Code:
-                  type: integer
-                  description: Code of the attraction
-                  example: 1001
                 Name:
                   type: string
                   description: Name of the attraction
@@ -90,10 +86,6 @@ paths:
             schema:
               type: object
               properties:
-                Code:
-                  type: integer
-                  description: Code of the culture
-                  example: 1001
                 Name:
                   type: string
                   description: Name of the culture
