@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginPage from '../LoginPage/loginPage';
 
 import Union from '../../images/union.svg';
 import MainImage from '../../images/zephyria.png';
