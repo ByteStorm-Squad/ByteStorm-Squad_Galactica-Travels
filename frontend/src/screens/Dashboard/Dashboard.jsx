@@ -3,8 +3,7 @@ import React from 'react';
 import "./style.css";
 import Union from '../../images/union.svg';
 import MainImage from '../../images/zephyria.png';
-import LeftImage from '../../images/left-image.png';
-import RightImage from '../../images/right-image.png';
+import Button from '../../components/Button/Button';
 
 const Dashboard = () => {
   return (  
@@ -26,11 +25,6 @@ const Dashboard = () => {
               <div className="overlap-group">
                 <div className="popular-now">Highly Rated</div>
               </div>
-            </div>
-          </div>
-          <div className="div">
-            <div className="image-wrapper">
-              <img className="image" alt="Image" src="image-2.png" />
             </div>
           </div>
           <div className="frame-2">
@@ -55,7 +49,9 @@ const Dashboard = () => {
           </div>
           <img className="union" alt="Union" src={Union} />
           <img className="img" alt="Rectangle" src="rectangle-4321.svg" />
-          <div className="text-wrapper-3">Book Now</div>
+          {/* add a button that goes to booking page */}
+     
+
           <div className="flexcontainer">
             <p className="text">
               <span className="span">
@@ -73,6 +69,7 @@ const Dashboard = () => {
               <span className="text-wrapper-5">$16000</span>
               <span className="text-wrapper-6">&nbsp;</span>
             </p>
+            <Button text="Book Now" type="full" onClick={() => {}} />
           </div>
           <div className="text-wrapper-7">Zephyria</div>
           <div className="group-4">
@@ -80,32 +77,16 @@ const Dashboard = () => {
               <div className="frame-3">
                 <div className="rectangle-2" />
               </div>
-              {/* <div className="group-5">
-                <div className="overlap-group-2">
-                  <div className="rectangle-3" />
-                  <img className="rectangle-4" alt="Rectangle" src={MainImage} />
-                  <div className="rectangle-5" />
-                  <div className="rectangle-3"/>
-                  <img className="rectangle-4" alt="Rectangle" src={MainImage} />
-                  <div className="rectangle-5" />
-                </div>
-              </div> */}
+
         <div class="group-5">
           <div class="overlap-group-2">
-            {/* <div class="small-image">            
-              <img class="rectangle-5" alt="Rectangle" src={LeftImage} />              
-            </div> */}
             <div class="main-image">
               <img class="rectangle-4" alt="Rectangle" src={MainImage} />
             </div>
-            {/* <div class="small-image">              
-              <img class="rectangle-6" alt="Rectangle" src={RightImage} />          
-            </div> */}
+
           </div>
         </div>
-              <div className="overlap-group-3">
-                <img className="rectangle-4" alt="Rectangle" src={MainImage} />
-              </div>            
+
             </div>
             <p className="explore-zephyria-s">
               Explore Zephyria&#39;s Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an

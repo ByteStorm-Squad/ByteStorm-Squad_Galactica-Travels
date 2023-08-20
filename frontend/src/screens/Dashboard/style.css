@@ -231,7 +231,7 @@
     align-items: flex-start;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     height: 96px;
     left: 322px;
     position: absolute;
@@ -356,6 +356,9 @@
 .dashboard .small-image {
     flex: 1;
     max-width: 30%; /* Adjust the width as needed */
+    position: absolute;
+    left: 0;
+    top: 0;
   }
   
 
