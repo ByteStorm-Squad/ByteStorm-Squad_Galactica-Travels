@@ -137,3 +137,15 @@ paths:
             description: Success
           '500':
             description: Error
+
+  /api/booking/getlocations:
+      get:
+        summary: Get Location Codes
+        description: Get Location Codes
+        tags:
+          - Booking                 
+        responses:
+          '200':
+            description: Success
+          '500':
+            description: Error

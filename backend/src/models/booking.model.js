@@ -15,7 +15,7 @@ var Booking = function (booking) {
     this.Booking_Date = new Date();
 };
 
-Booking.getpaymentstatus = async function (bookingid) {    
+Booking.getpaymentstatus = async function (bookingid) {
     let status = await pool.query("SELECT booking_status FROM Booking WHERE booking_id=$1", [bookingid]);
     console.log("status :::::", status.rows[0])
     return status.rows[0];
@@ -48,6 +48,13 @@ Booking.getflightinfo = async function (Journey_ID) {
     return [flightinfo.rows[0], priceinfo.rows];
 }
 
+Booking.getlocations = async function () {
+    let locations = await pool.query("SELECT Code FROM Spaceport");
+    let location_codes = []
+    locations.rows.forEach(element => location_codes.push(element.code))
+    console.log("location codes = ", location_codes)
+    return location_codes;
+}
 
 Booking.getbookingdetails = async function (booking_id) {
     let query = await pool.query("SELECT passenger_seat.name,passenger_seat.Intergalactic_ID,passenger_seat.seat_id,booking.Journey_ID,booking.booking_date,Spacecraft_Type.model_name,Spacecraft_Type.variant,Route.origin,Route.Destination,Flight_Schedule.departure_date,Flight_Schedule.departure_time,Flight_Schedule.arrival_date,Flight_Schedule.arrival_time FROM booking left join passenger_seat on booking.booking_id=Passenger_seat.booking_id LEFT JOIN Spacecraft_Type ON Spacecraft_Type.model_id=booking.model_id LEFT JOIN Flight_Schedule ON Flight_Schedule.Journey_ID=booking.Journey_ID LEFT JOIN Route ON FLight_Schedule.route_id=Route.route_id WHERE booking.booking_id=$1", [booking_id]);
