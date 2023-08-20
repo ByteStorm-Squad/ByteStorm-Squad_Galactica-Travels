@@ -44,6 +44,7 @@ export const getNextFlights = async (passengerCount, route) => {
 export const getLocations = async () => {
   try {
     const response = await axios.get(`${API_BASE_URL}/api/booking/getlocations`);
+    console.log(response.data)
     return response.data;
   } catch (error) {
     throw error;
