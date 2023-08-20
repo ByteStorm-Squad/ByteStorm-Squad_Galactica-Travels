@@ -1,7 +1,6 @@
 import React from 'react';
 import Button from '../../components/Button/Button';
 import TextBox from '../../components/TextBox/TextBox';
-import ImageSlider from '../../components/ImageSlider/ImageSlider';
 
 const TravelFragment = ({ incrementFragmentNo }) => {
   return (
