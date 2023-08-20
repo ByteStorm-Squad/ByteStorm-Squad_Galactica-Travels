@@ -23,7 +23,13 @@ export const getName = async () => {
 export const registerUser = async (registerData) => {
   try {
     const response = await axios.post(`${API_BASE_URL}/api/register`, registerData);
-    return response.data;
+
+    // redirect to dashboard if registration is successful
+    if (response.status === 200) {
+      window.location.href = '/';
+      return response.data;
+    }
+
   } catch (error) {
     throw error;
   }
