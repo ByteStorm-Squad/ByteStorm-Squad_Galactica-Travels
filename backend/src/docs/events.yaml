@@ -17,10 +17,6 @@ paths:
             schema:
               type: object
               properties:
-                Code:
-                  type: integer
-                  description: Code of the event
-                  example: 1001
                 Name:
                   type: string
                   description: Name of the event

@@ -173,6 +173,9 @@ INSERT INTO Flight_Schedule(Journey_ID, Route_ID, Spacecraft_ID, Departure_Date,
 VALUES ('F005', 'G012', 'S004', '2022-12-30', '03:45:00', 'Scheduled', 0.00);
 
 INSERT INTO Flight_Schedule(Journey_ID, Route_ID, Spacecraft_ID, Departure_Date, Departure_Time, Flight_Status, Flight_Percent)
+VALUES ('F013', 'G012', 'S004', '2024-12-30', '03:45:00', 'Scheduled', 0.00);
+
+INSERT INTO Flight_Schedule(Journey_ID, Route_ID, Spacecraft_ID, Departure_Date, Departure_Time, Flight_Status, Flight_Percent)
 VALUES ('F006', 'G016', 'S007', '2023-01-05', '04:30:00', 'Departed-On-Time', 100.00);
 
 INSERT INTO Flight_Schedule(Journey_ID, Route_ID, Spacecraft_ID, Departure_Date, Departure_Time, Flight_Status, Flight_Percent)

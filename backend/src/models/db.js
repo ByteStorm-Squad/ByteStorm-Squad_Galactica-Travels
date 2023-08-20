@@ -1,5 +1,3 @@
-// require('dotenv').config();
-
 const Pool = require('pg').Pool;
 
 const connection =  new Pool({

@@ -56,7 +56,11 @@ SET TIME ZONE 'Etc/UTC';
  |______||_| \_| \____/ |_|  |_||_____/
 */
 ----------ENUM----------------------------
-
+CREATE TYPE Payment_Type_Enum AS ENUM(
+'Credit Card',
+'PayPal',
+'Cash'
+);
 
 CREATE TYPE Flight_Status_Enum AS ENUM(
 'Scheduled',
@@ -432,6 +436,7 @@ CREATE TABLE Spaceport (
   Galaxy varchar(40) NOT NULL,
   Solar_System varchar(40) NOT NULL,
   Planet varchar(40) NOT NULL,
+  Image varchar(100),
   Description TEXT,
   PRIMARY KEY (Code)
 );
@@ -506,6 +511,7 @@ CREATE TABLE Spacecraft_Type (
   P_Pods_Per_Row int NOT NULL,
   Max_Load numeric(12,2) NOT NULL,
   Fuel_Capacity numeric(12,2) NOT NULL,
+  Image varchar(100),
   PRIMARY KEY (Model_ID)
 );
 
@@ -580,6 +586,14 @@ CREATE TABLE Booking  (
   FOREIGN KEY (Journey_ID) REFERENCES Flight_Schedule(Journey_ID) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
+CREATE TABLE Payment (
+  Payment_ID SERIAL,
+  Booking_ID int NOT NULL,
+  Payment_Method Payment_Method_Enum NOT NULL,
+  PRIMARY KEY (Payment_ID),
+  FOREIGN KEY (Booking_ID) REFERENCES Booking(Booking_ID) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 CREATE TABLE Passenger_Pod(
     Booking_ID int,
     Model_ID int,
@@ -599,6 +613,7 @@ CREATE TABLE Cultures (
   Description TEXT,
   Spaceport varchar(10),
   Popularity_Rating numeric(10,2),
+  Image varchar(100),
   PRIMARY KEY (Code),
   FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
@@ -609,6 +624,7 @@ CREATE TABLE Attractions (
   Description TEXT,
   Spaceport varchar(10),
   Popularity_Rating numeric(10,2),
+  Image varchar(100),
   PRIMARY KEY (Code),
   FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
@@ -619,6 +635,7 @@ CREATE TABLE Events (
   Description TEXT,
   Spaceport varchar(10),
   Popularity_Rating numeric(10,2),
+  Image varchar(100),
   PRIMARY KEY (Code),
   FOREIGN KEY (Spaceport) REFERENCES Spaceport(Code)
 );
