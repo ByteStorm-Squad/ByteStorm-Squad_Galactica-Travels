@@ -6,30 +6,40 @@ import PopularSelector from './PopularSelector';
 import image1 from '../../images/Slider/img_1.jpg';
 import image2 from '../../images/Slider/img_2.jpg';
 import image3 from '../../images/Slider/img_3.jpg';
-import ComponentSlider from '../../components/ComponentSlider/ComponentSlider';
+import AttractionSlider from './AttractionSlider';
+import Button from '../../components/Button/Button';
 
 const Dashboard = () => {
   const items = [
-    <div>
-      <img src={image1} style={{ borderRadius: '90px', height: 250, width: 250 }} alt="Image 1" />
-      <div>Explore Zephyria's Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an intergalactic masterpiece.</div>
-    </div>,
-    <div>
-      <img src={image2} style={{ borderRadius: '90px', height: 250, width: 250 }} alt="Image 2" />
-      <div>Explore Zephyria's Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an intergalactic masterpiece.</div>
-    </div>,
-    <div>
-      <img src={image3} style={{ borderRadius: '90px', height: 250, width: 250 }} alt="Image 3" />
-      <div>Explore Zephyria's Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an intergalactic masterpiece.</div>
-    </div>,
+    {
+      image: image1,
+      description:
+        "Explore Zephyria's Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an intergalactic masterpiece.",
+    },
+    {
+      image: image2,
+      description:
+        "Explore Zephyria's Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an intergalactic masterpiece.",
+    },
+    {
+      image: image3,
+      description:
+        "Explore Zephyria's Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an intergalactic masterpiece.",
+    },
   ];
+
   return (
     <>
       <PageHeader title="Dashboard" showBackButton={false} />
       <AttractionsSelector />
       <PopularSelector />
       <div className="text-yellow-500 text-2xl font-medium text-center">Zephyria</div>
-      <ComponentSlider components={items} />
+      <AttractionSlider components={items} />
+      <div className="flex flex-col w-full justify-center items-center gap-2 py-2 bg-white/10">
+        <span className="text-white text-base font-semibold">Travel Modes starting from</span>
+        <span className="text-green-500 text-2xl font-semibold">$16,000</span>
+        <Button text="Book Now" type="stroke" />
+      </div>
     </>
   );
 };

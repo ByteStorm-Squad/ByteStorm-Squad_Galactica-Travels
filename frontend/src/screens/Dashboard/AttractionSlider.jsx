@@ -8,10 +8,17 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
 import { Pagination, Navigation, EffectCoverflow, Scrollbar, A11y } from 'swiper/modules';
+import AttractionSlide from './AttractionSlide';
 
-const ComponentSlider = ({ components }) => {
+const AttractionSlider = ({ components }) => {
+  const [activeSlide, setActiveSlide] = useState(0);
+
+  const handleSlideChange = swiper => {
+    setActiveSlide(swiper.realIndex); // Update the active slide index
+  };
+
   return (
-    <div style={{ marginTop: 30 }} className="bg-white/10">
+    <div style={{ marginTop: 20 }} className="bg-white/10">
       <Swiper
         modules={[EffectCoverflow, Pagination, Navigation, A11y, Scrollbar]}
         effect={'coverflow'}
@@ -31,14 +38,15 @@ const ComponentSlider = ({ components }) => {
           prevEl: '.swiper-button-prev',
           clickable: true,
         }}
+        onSlideChange={handleSlideChange}
       >
         {components.map((item, index) => (
-          <SwiperSlide key={index} style={{ height: 400, width: 250, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-            {item}
+          <SwiperSlide key={index} style={{ height: 350, width: 250, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <AttractionSlide image={item.image} description={item.description} showDescription={activeSlide == index} />
           </SwiperSlide>
         ))}
       </Swiper>
     </div>
   );
 };
-export default ComponentSlider;
+export default AttractionSlider;
