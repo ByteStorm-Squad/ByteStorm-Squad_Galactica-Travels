@@ -116,15 +116,15 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels.svg?style=for-the-badge
 [contributors-url]: https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
+[forks-shield]: https://img.shields.io/github/forks/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels.svg?style=for-the-badge
 [forks-url]: https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
+[stars-shield]: https://img.shields.io/github/stars/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels.svg?style=for-the-badge
 [stars-url]: https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels.svg?style=for-the-badge
 [issues-url]: https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
+[license-shield]: https://img.shields.io/github/license/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels.svg?style=for-the-badge
 [license-url]: https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/blob/master/LICENSE.txt
 [product-screenshot]: images/screenshot.png
 [Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
