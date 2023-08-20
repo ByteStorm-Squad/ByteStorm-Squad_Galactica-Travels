@@ -10,6 +10,7 @@ import MapPage from './screens/MapPage/MapPage';
 import Profile from './screens/Profile/Profile';
 import Explorepage from './screens/ExplorePage/ExplorePage';
 import SignupPage from './screens/SignupPage/SignupPage';
+import LoginPage from './screens/LoginPage/loginPage';
 
 const App = () => {
   return (
@@ -23,9 +24,10 @@ const App = () => {
         <Route path="/journeys" element={<JourneysPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/explore" element={<Explorepage />} />
-        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signup2" element={<SignupPage2 />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );
