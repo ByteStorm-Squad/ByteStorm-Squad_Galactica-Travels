@@ -9,6 +9,7 @@ import PaymentFragment from './PaymentFragment';
 
 const BookingPage = () => {
   const [fragmentNo, setFragmentNo] = useState(0);
+  const [bookingData, setBookingData] = useState({});
 
   const incrementFragmentNo = () => {
     setFragmentNo(fragmentNo + 1);
@@ -21,7 +22,9 @@ const BookingPage = () => {
   let selectedFragment;
   switch (fragmentNo) {
     case 0:
-      selectedFragment = <InitialFragment incrementFragmentNo={incrementFragmentNo} />;
+      selectedFragment = (
+        <InitialFragment incrementFragmentNo={incrementFragmentNo} bookingData={bookingData} setBookingData={setBookingData} />
+      );
       break;
     case 1:
       selectedFragment = <JourneysFragment incrementFragmentNo={incrementFragmentNo} />;
