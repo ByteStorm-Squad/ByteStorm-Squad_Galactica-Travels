@@ -12,10 +12,6 @@ paths:
             schema:
               type: object
               properties:
-                Code:
-                  type: string
-                  description: Code of the culture
-                  example: 'C001'
                 Name:
                   type: string
                   description: Name of the culture
@@ -27,7 +23,7 @@ paths:
                 Spaceport:
                   type: string
                   description: Spaceport related to the culture
-                  example: 'Spaceport Alpha'
+                  example: 'SCU'
                 Popularity_Rating:
                   type: integer
                   description: Popularity rating of the culture
@@ -115,7 +111,24 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/Culture'
+              type: object
+              properties:
+                Name:
+                  type: string
+                  description: Name of the culture
+                  example: "Nebula Amusement Park"
+                Description:
+                  type: string
+                  description: Description of the culture
+                  example: "A thrilling amusement park located near the Great Carina Nebula."
+                Spaceport:
+                  type: string
+                  description: Spaceport related to the culture
+                  example: "SCU"
+                Popularity_Rating:
+                  type: integer
+                  description: Popularity rating of the culture
+                  example: 5      
       responses:
         '200':
           description: Success

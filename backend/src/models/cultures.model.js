@@ -21,8 +21,8 @@ Culture.getAll = function(result) {
   };
   
   Culture.create = function(newCulture, result) {
-    const sql = "INSERT INTO public.cultures (\"Code\", \"Name\", \"Description\", \"Spaceport\", \"Popularity_Rating\") VALUES ($1, $2, $3, $4, $5)";
-    const values = [newCulture.Code, newCulture.Name, newCulture.Description, newCulture.Spaceport, newCulture.Popularity_Rating];
+    const sql = "INSERT INTO public.cultures (\"Name\", \"Description\", \"Spaceport\", \"Popularity_Rating\") VALUES ($1, $2, $3, $4)";
+    const values = [newCulture.Name, newCulture.Description, newCulture.Spaceport, newCulture.Popularity_Rating];
     pool.query(sql, values, (err, res) => {
       if (err) {
         console.log("error: ", err);
