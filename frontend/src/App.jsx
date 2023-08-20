@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Dashboard from './screens/Dashboard/Dashboard';
 import AccountPage from './screens/AccountPage/AccountPage';
 import BookingPage from './screens/BookingPage/BookingPage';
-import { SignupPage } from './screens/SignupPage/SignupPage';
+import { SignupPage2 } from './screens/SignupPage2/SignupPage2';
 import JourneysPage from './screens/JourneysPage/JourneysPage';
 import MapPage from './screens/MapPage/MapPage';
 import Profile from './screens/Profile/Profile';
@@ -22,7 +22,7 @@ const App = () => {
         <Route path="/journeys" element={<JourneysPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/explore" element={<Explorepage />} />
-        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/signup" element={<SignupPage2 />} />
       </Routes>
     </>
   );

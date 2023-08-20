@@ -4,7 +4,7 @@ import PageHeader from '../../components/PageHeader/PageHeader';
 import TextBox from '../../components/TextBox/TextBox';
 import DateField from '../../components/DateField/DateField';
 
-export const SignupPage = () => {
+export const SignupPage2 = () => {
   return (
     <>
       <PageHeader title="Sign Up" />
@@ -21,4 +21,4 @@ export const SignupPage = () => {
   );
 };
 
-export default CalendarMonth;
+export default SignupPage2;
