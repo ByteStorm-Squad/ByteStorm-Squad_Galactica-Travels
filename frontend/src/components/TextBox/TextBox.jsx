@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 
 const TextBox = props => {
-  const { text, type, ownerState, inputProps, InputProps, error, ...otherProps } = props;
+  const { text, type, setText, ownerState, inputProps, InputProps, error, ...otherProps } = props;
 
-  const [inputValue, setInputValue] = useState(''); // State to store the input value
+  const [inputValue, setInputValue] = useState('');
 
   const handleInputChange = event => {
-    setInputValue(event.target.value); // Update the input value
+    setInputValue(event.target.value);
+    setText(event.target.value);
   };
 
   const rectangleStyle = {

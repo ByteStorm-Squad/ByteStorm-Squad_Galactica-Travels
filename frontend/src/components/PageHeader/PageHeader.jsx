@@ -2,18 +2,20 @@ import React from 'react';
 import { ArrowBackIos } from '@mui/icons-material';
 import { useNavigate } from 'react-router-dom';
 
-const PageHeader = ({ title, showBackButton = true }) => {
-  const navigate = useNavigate();
-
-  const navigateBack = () => {
+const PageHeader = ({
+  title,
+  showBackButton = true,
+  onBackPress = () => {
     navigate(-1);
-  };
+  },
+}) => {
+  const navigate = useNavigate();
 
   return (
     <>
       {showBackButton && (
         <button
-          onClick={navigateBack}
+          onClick={onBackPress}
           className="absolute top-14 left-8 pl-1 flex h-10 w-12 rounded-md justify-around items-center bg-white bg-opacity-10"
         >
           <ArrowBackIos className="flex justify-center px-1" />

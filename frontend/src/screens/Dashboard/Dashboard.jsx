@@ -81,10 +81,10 @@ const Dashboard = () => {
                 <div className="rectangle-2" />
               </div>
 
-              <div class="group-5">
-                <div class="overlap-group-2">
-                  <div class="main-image">
-                    <img class="rectangle-4" alt="Rectangle" src={MainImage} />
+              <div className="group-5">
+                <div className="overlap-group-2">
+                  <div className="main-image">
+                    <img className="rectangle-4" alt="Rectangle" src={MainImage} />
                   </div>
                 </div>
               </div>
