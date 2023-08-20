@@ -6,15 +6,12 @@
 }
 
 .dashboard .overlap {
-  height: 944px;
   left: -232px;
   position: relative;
-  top: -18px;
   width: 840px;
 }
 
 .dashboard .paul-volkmer {
-  height: 923px;
   left: 235px;
   object-fit: cover;
   position: absolute;

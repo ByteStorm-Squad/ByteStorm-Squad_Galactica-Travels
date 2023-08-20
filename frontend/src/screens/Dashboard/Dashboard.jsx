@@ -52,7 +52,6 @@ const Dashboard = () => {
             <div className="rectangle" />
           </div>
           <img className="union" alt="Union" src={Union} />
-          <img className="img" alt="Rectangle" src="rectangle-4321.svg" />
           {/* add a button that goes to booking page */}
 
           <div className="flexcontainer">

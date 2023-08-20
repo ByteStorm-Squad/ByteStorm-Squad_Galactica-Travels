@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const DropDownList = ({ label,dropdownlist}) => {
+const DropDownList = ({ label, dropdownlist }) => {
   const rectangleStyle = {
     backgroundColor: '#1c1c1d',
     borderBottomWidth: '2px',
@@ -42,9 +42,6 @@ const DropDownList = ({ label,dropdownlist}) => {
           </Select>
         </FormControl>
       </div>
-      <div className="flex justify-end text-gray-400">
-        <p>0/20</p>
-      </div>{' '}
     </div>
   );
 };
