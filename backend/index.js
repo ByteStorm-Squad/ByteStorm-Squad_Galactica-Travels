@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 // Get all files in the routes folder
 const files = fs.readdirSync('./src/routes');
 
+// Accept these headers to avoid CORS errors on the client side
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
@@ -33,6 +34,11 @@ const { swaggerSpecs } = require('./src/services/swagger');
 // // Use the middleware to parse the request body
 // app.use(express.json());
 // Accept these headers to avoid CORS errors on the client side
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 
 ///////////////////// Routes /////////////////////
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));

@@ -1,8 +1,7 @@
 import React from 'react';
-import Button from '../../components/Button/Button';
 import JourneyCard from '../../components/JourneyCard/JourneyCard';
 
-const JourneysFragment = ({ incrementFragmentNo }) => {
+const JourneysFragment = ({ incrementFragmentNo, bookingData, setBookingData }) => {
   return (
     <>
       <div className="my-8 mx-8">
