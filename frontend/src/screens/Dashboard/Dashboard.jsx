@@ -1,16 +1,18 @@
 import React from 'react';
 
-import "./style.css";
 import Union from '../../images/union.svg';
 import MainImage from '../../images/zephyria.png';
 import Button from '../../components/Button/Button';
 
+import './style.css';
+import PageHeader from '../../components/PageHeader/PageHeader';
+
 const Dashboard = () => {
- 
   return (
-<div className="dashboard">      
-        <div className="overlap">       
-          <div className="text-wrapper">Dashboard</div>
+    <>
+      <PageHeader title="Dashboard" showBackButton={false} />
+      <div className="dashboard">
+        <div className="overlap">
           <div className="frame">
             <div className="group">
               <div className="overlap-group">
@@ -51,7 +53,6 @@ const Dashboard = () => {
           <img className="union" alt="Union" src={Union} />
           <img className="img" alt="Rectangle" src="rectangle-4321.svg" />
           {/* add a button that goes to booking page */}
-     
 
           <div className="flexcontainer">
             <p className="text">
@@ -79,26 +80,22 @@ const Dashboard = () => {
                 <div className="rectangle-2" />
               </div>
 
-        <div class="group-5">
-          <div class="overlap-group-2">
-            <div class="main-image">
-              <img class="rectangle-4" alt="Rectangle" src={MainImage} />
-            </div>
-
-          </div>
-        </div>
-
+              <div class="group-5">
+                <div class="overlap-group-2">
+                  <div class="main-image">
+                    <img class="rectangle-4" alt="Rectangle" src={MainImage} />
+                  </div>
+                </div>
+              </div>
             </div>
             <p className="explore-zephyria-s">
-              Explore Zephyria&#39;s Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an
-              intergalactic masterpiece.
+              Explore Zephyria&#39;s Enchanted Arboretum: A mesmerizing fusion of flora and fauna, painting an intergalactic masterpiece.
             </p>
           </div>
-        
+        </div>
       </div>
-    </div>
+    </>
   );
-  
 };
 
 export default Dashboard;
