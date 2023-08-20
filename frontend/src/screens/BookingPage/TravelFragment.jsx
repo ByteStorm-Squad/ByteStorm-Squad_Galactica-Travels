@@ -8,8 +8,10 @@ const TravelFragment = ({ incrementFragmentNo }) => {
       <div className="my-8 mx-8">
         <h2>Travel Details</h2>
       </div>
-      <TextBox text={'Travel Mode'} />
-      <TextBox text={'Travelling Document Type'} />
+      <div className="my-8 mx-8 text-gray-300">
+        <h3>Passenger 1</h3>
+      </div>
+      <TextBox text={'Travel Class'} />
       <div className="flex justify-center">
         <Button text="Continue" type="full" onClick={incrementFragmentNo} />
       </div>
