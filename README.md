@@ -60,7 +60,7 @@ Here's why Galactica Travels is the go-to solution for space travel:
 * **Access Anytime**: Your booking information is always at your fingertips.
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 
 
@@ -75,7 +75,7 @@ Here're the major frameworks and libraries used to bootstrap the Galactica Trave
 * [![Swagger][Swagger.io]][Swagger-url]
 * [![JavaScript][JavaScript.com]][JavaScript-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 <!-- USAGE EXAMPLES -->
 ## Usage
@@ -87,7 +87,7 @@ Galactica Travels is designed to provide a seamless experience for interplanetar
 3. **Explore Destinations**: Learn about the climate, culture, and attractions of your chosen destination.
 4. **Book with Ease**: Enter your personal information and payment details to complete the booking.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 
 
@@ -106,7 +106,7 @@ Galactica Travels is designed to provide a seamless experience for interplanetar
 
 See the [open issues](https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 
 <!-- LICENSE -->
@@ -114,7 +114,7 @@ See the [open issues](https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galacti
 
 Distributed under the MIT License. See `LICENSE` for more information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+<p align="right"><a href="#readme-top">back to top</a></p>
 
 [contributors-shield]: https://img.shields.io/github/contributors/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels.svg?style=for-the-badge
 [contributors-url]: https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/graphs/contributors
