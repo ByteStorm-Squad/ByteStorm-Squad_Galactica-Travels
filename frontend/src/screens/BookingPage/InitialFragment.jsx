@@ -12,6 +12,7 @@ const InitialFragment = ({ incrementFragmentNo, bookingData, setBookingData }) =
     setBookingData({ ...bookingData, departure: departure, destination: destination });
     try {
       const data = await getNextFlights(2, `${departure} to ${destination}`);
+      console.log(data);
       setBookingData({ ...bookingData, availableJourneys: data });
     } catch (error) {
       console.error('Error fetching journey data:', error);
@@ -23,8 +24,8 @@ const InitialFragment = ({ incrementFragmentNo, bookingData, setBookingData }) =
       <div className="my-8 mx-8">
         <h2>Passenger Details</h2>
       </div>
-      <TextBox text={'Departure'} setText={val => setDeparture(val)} />
-      <TextBox text={'Destination'} setText={val => setDestination(val)} />
+      <TextBox text={'Departure'} onChange={e => setDeparture(e.target.value)} />
+      <TextBox text={'Destination'} onChange={e => setDestination(e.target.value)} />
       <div className="flex justify-center">
         <Button text="Continue" type="full" onClick={handleContinue} />
       </div>
