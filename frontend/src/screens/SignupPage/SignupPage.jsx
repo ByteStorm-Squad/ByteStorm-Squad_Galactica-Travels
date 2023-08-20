@@ -2,6 +2,7 @@ import React from 'react';
 import { CalendarMonth } from '../../icons/CalendarMonth/CalendarMonth';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import TextBox from '../../components/TextBox/TextBox';
+import DateField from '../../components/DateField/DateField';
 
 export const SignupPage = () => {
   return (
@@ -12,7 +13,7 @@ export const SignupPage = () => {
       </div>
       <TextBox text={'First Name *'} />
       <TextBox text={'Last Name *'} />
-      {/* <DateField text={'Date of Birth *'} /> */}
+      <DateField text={'Date of Birth *'} />
       <TextBox text={'Inter Galactic ID'} />
       <TextBox text={'Contact Identifier'} />
       <TextBox text={'Home Location'} />
