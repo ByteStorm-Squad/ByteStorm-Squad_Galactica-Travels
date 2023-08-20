@@ -20,6 +20,16 @@ exports.getlocations = async (req, res) => {
     }
 }
 
+exports.deleteBookings = async (req, res) => {
+    try {
+        const booking = await Booking.deleteBookings(req);
+        res.status(200).send(JSON.stringify({ booking }));
+    }
+    catch (err) {
+        console.log(err);
+        res.send("500");
+    }
+}
 
 exports.getFlights = async (req, res, cookies) => {
     try {
@@ -49,6 +59,7 @@ exports.getPods = async (req, res, cookies) => {
         return;
 
     } catch (err) {
+        console.log(err);
         res.send("500");
     }
 }

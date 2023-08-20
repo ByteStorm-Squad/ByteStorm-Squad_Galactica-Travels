@@ -15,6 +15,13 @@ var Booking = function (booking) {
     this.Booking_Date = new Date();
 };
 
+Booking.deleteBookings = async function (req) {   
+    let booking = await pool.query("DELETE FROM Booking;");
+    console.log("booking", booking);
+    return booking; 
+}
+
+
 Booking.getpaymentstatus = async function (bookingid) {
     let status = await pool.query("SELECT booking_status FROM Booking WHERE booking_id=$1", [bookingid]);
     console.log("status :::::", status.rows[0])
@@ -34,7 +41,9 @@ Booking.createbooking = async function (newseat) {
 }
 
 Booking.getPods = async function (Journey_ID) {
-    let capacities = await pool.query("SELECT Economy_Pod_Capacity, Business_Pod_Capacity, Platinum_Pod_Capacity, E_Pods_Per_row, B_Pods_Per_row, P_Pods_Per_row FROM Spacecraft_Type NATURAL JOIN (SELECT spacecraft_id FROM spacecraft_instance NATURAL JOIN Flight_Schedule WHERE Journey_ID = $1)", [Journey_ID]);
+    // let capacities = await pool.query("SELECT Economy_Pod_Capacity, Business_Pod_Capacity, Platinum_Pod_Capacity, E_Pods_Per_row, B_Pods_Per_row, P_Pods_Per_row FROM Spacecraft_Type INNER JOIN (SELECT spacecraft_id, model_id FROM spacecraft_instance INNER JOIN Flight_Schedule ON spacecraft_instance.Flight_Schedule_Journey_ID = $1) AS Subquery ON Spacecraft_Type.spacecraft_id = Subquery.spacecraft_id", [Journey_ID]);
+    let capacities = await pool.query("SELECT Economy_Pod_Capacity, Business_Pod_Capacity, Platinum_Pod_Capacity, E_Pods_Per_row, B_Pods_Per_row, P_Pods_Per_row FROM Spacecraft_Type NATURAL JOIN Flight_Schedule WHERE Journey_ID = $1", [Journey_ID]);
+
     let booked_seat = await pool.query("SELECT pod_id FROM Passenger_Pod LEFT JOIN Booking on Passenger_Pod.booking_id=Booking.booking_id Where Journey_ID=$1", [Journey_ID]);
     let model_id = await pool.query("SELECT model_id FROM Spacecraft_Instance NATURAL JOIN Flight_Schedule WHERE Journey_ID=$1", [Journey_ID]);
     console.log([capacities.rows[0], booked_seat.rows, model_id.rows[0]])

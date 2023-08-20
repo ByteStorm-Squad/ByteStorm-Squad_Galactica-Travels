@@ -68,4 +68,14 @@ router.get('/booking/getlocations', function (req, res) {
     }
 })
 
+router.delete('/booking/deleteBookings', function (req, res) {
+    try {
+        bookingController.deleteBookings(req, res);
+    } catch (err) {
+        console.log(err);
+        res.send("500");
+    }
+})
+
+
 module.exports = router;

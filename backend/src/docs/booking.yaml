@@ -100,11 +100,11 @@ paths:
                     'seat-assignment':
                       type: string
                       description: 'seat-assignment'
-                      example: '3C'
+                      example: '10C'
                     seatNo:
                       type: string
                       description: seatNo
-                      example: '{"3C"}'
+                      example: '{"10C"}'
           responses:
             '200':
               description: Success
@@ -144,6 +144,17 @@ paths:
         description: Get Location Codes
         tags:
           - Booking                 
+        responses:
+          '200':
+            description: Success
+          '500':
+            description: Error
+  /api/booking/deleteBookings:
+      delete:
+        summary: Delete Booking
+        description: Delete Booking
+        tags:
+          - Booking               
         responses:
           '200':
             description: Success
