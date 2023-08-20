@@ -17,12 +17,13 @@ const App = () => {
       <Background />
       <NavMenu />
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<SignupPage />} />
         <Route path="/account" element={<Profile />} />
         <Route path="/booking" element={<BookingPage />} />
         <Route path="/journeys" element={<JourneysPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/explore" element={<Explorepage />} />
+        {/* <Route path="/dashboard" element={<Dashboard />} /> */}
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signup2" element={<SignupPage2 />} />
       </Routes>

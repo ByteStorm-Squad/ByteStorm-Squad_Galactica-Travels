@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 
 const TextBox = props => {
-  const { text, type, setText, ownerState, inputProps, InputProps, error, ...otherProps } = props;
-
-  const [inputValue, setInputValue] = useState('');
-
-  const handleInputChange = event => {
-    setInputValue(event.target.value);
-    setText(event.target.value);
-  };
+  const { text, type, onChange, ownerState, inputProps, InputProps, error, ...otherProps } = props;
 
   const rectangleStyle = {
     backgroundColor: '#1c1c1d',
@@ -34,10 +27,7 @@ const TextBox = props => {
   return (
     <div className="mx-8 my-5">
       <div style={rectangleStyle}>
-        <input type={type} value={inputValue} onChange={handleInputChange} placeholder={text} style={inputStyle} {...otherProps} />
-      </div>
-      <div className="flex justify-end text-gray-400">
-        <p>0/20</p>
+        <input type={type} onChange={onChange} placeholder={text} style={inputStyle} {...otherProps} />
       </div>
     </div>
   );
