@@ -10,13 +10,12 @@ const Attraction = function(attraction) {
 
 Attraction.create = (newAttraction, result) => {
     const values = [
-      newAttraction.Code,
       newAttraction.Name,
       newAttraction.Description,
       newAttraction.Spaceport,
       newAttraction.Popularity_Rating
     ];
-    const sql = "INSERT INTO attractions (\"Code\", \"Name\", \"Description\", \"Spaceport\", \"Popularity_Rating\") VALUES ($1, $2, $3, $4, $5)";
+    const sql = "INSERT INTO attractions (\"Name\", \"Description\", \"Spaceport\", \"Popularity_Rating\") VALUES ($1, $2, $3, $4)";
     pool.query(sql, values, (err, res) => {
       if (err) {
         result(err, null);
