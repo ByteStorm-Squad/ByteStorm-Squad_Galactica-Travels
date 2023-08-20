@@ -1,8 +1,6 @@
 import React from 'react';
 import { NavMenu, Hero, Footer, Memory, Explore, Advertise, Pricings, Banner, Newslatter, Background } from './components';
 import { hero, navlinks, memory, placesAPI, brands, pricingapi, bannerAPI, footerAPI } from './data/dummy_data';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { Routes, Route } from 'react-router-dom';
 import Dashboard from './screens/Dashboard/Dashboard';
 import AccountPage from './screens/AccountPage/AccountPage';
@@ -13,7 +11,7 @@ import MapPage from './screens/MapPage/MapPage';
 
 const App = () => {
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <>
       <Background />
       <NavMenu />
       <Routes>
@@ -23,7 +21,7 @@ const App = () => {
         <Route path="/journeys" element={<JourneysPage />} />
         <Route path="/map" element={<MapPage />} />
       </Routes>
-    </LocalizationProvider>
+    </>
   );
 };
 

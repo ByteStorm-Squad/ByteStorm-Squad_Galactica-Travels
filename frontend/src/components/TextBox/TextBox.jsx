@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 
-const TextBox = ({ text, type }) => {
+const TextBox = props => {
+  const { text, type, ownerState, inputProps, InputProps, error, ...otherProps } = props;
+
   const [inputValue, setInputValue] = useState(''); // State to store the input value
 
   const handleInputChange = event => {
@@ -31,7 +33,7 @@ const TextBox = ({ text, type }) => {
   return (
     <div className="mx-8 my-5">
       <div style={rectangleStyle}>
-        <input type={type} value={inputValue} onChange={handleInputChange} placeholder={text} style={inputStyle} />
+        <input type={type} value={inputValue} onChange={handleInputChange} placeholder={text} style={inputStyle} {...otherProps} />
       </div>
       <div className="flex justify-end text-gray-400">
         <p>0/20</p>
