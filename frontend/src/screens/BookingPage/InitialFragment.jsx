@@ -9,10 +9,9 @@ const InitialFragment = ({ incrementFragmentNo, bookingData, setBookingData }) =
 
   const handleContinue = async () => {
     incrementFragmentNo();
-    setBookingData({ ...bookingData, departure: departure, destination: destination });
     try {
       const data = await getNextFlights(2, `${departure} to ${destination}`);
-      setBookingData({ ...bookingData, availableJourneys: data });
+      setBookingData({ ...bookingData, departure: departure, destination: destination, availableJourneys: data?.nextFlight });
     } catch (error) {
       console.error('Error fetching journey data:', error);
     }

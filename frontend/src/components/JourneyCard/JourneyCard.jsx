@@ -1,7 +1,7 @@
 import { ArrowForwardIos, RocketLaunch } from '@mui/icons-material';
 import React from 'react';
 
-const JourneyCard = ({ spaceship, journeyCode, departure, arrival, onClick }) => {
+const JourneyCard = ({ spaceship, journeyCode, departure, destination, status, departure_time, onClick }) => {
   return (
     <div className="flex flex-col justify-center items-center mx-8 my-8 rounded-xl overflow-hidden bg-white/20">
       <div className="flex justify-center items-center text-lg font-bold h-12 w-full bg-black/50">
@@ -9,15 +9,15 @@ const JourneyCard = ({ spaceship, journeyCode, departure, arrival, onClick }) =>
       </div>
       <div className="flex justify-center items-center gap-5 h-28">
         <div className="flex flex-col justify-center items-center">
-          <div>DEP : MIL</div>
+          <div>DEP : {departure}</div>
           <div className="my-2">
             <RocketLaunch />
           </div>
-          <div>DES : TRI</div>
+          <div>DES : {destination}</div>
         </div>
         <div className="flex flex-col grow gap-2 text-gray-300 text-xs">
-          <div>Departure : {departure}</div>
-          <div>Arrival : {arrival}</div>
+          <div>Status : {status}</div>
+          <div>Departure : {departure_time}</div>
         </div>
       </div>
       <div className="flex justify-center items-center gap-2 text-lg font-bold h-14 w-full bg-black/50" onClick={onClick}>
