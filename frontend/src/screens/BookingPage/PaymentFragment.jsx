@@ -6,11 +6,11 @@ const PaymentFragment = ({ incrementFragmentNo }) => {
   const BankList = [
     {
       icon: 'https://banner2.cleanpng.com/20180802/xri/kisspng-logo-mastercard-vector-graphics-font-visa-mastercard-logo-png-photo-png-arts-5b634298cd58d5.9008352515332317688411.jpg',
-      text: 'Axis Bank *** **** **** 8395',
+      text: 'MasterCard Credit/Debit Card',
     },
     {
       icon: 'https://w7.pngwing.com/pngs/618/512/png-transparent-visa-logo-mastercard-credit-card-payment-visa-blue-company-text.png',
-      text: 'Galx Bank *** **** **** 8395',
+      text: 'Visa Credit/Debit Card',
     },
   ];
   return (
@@ -24,8 +24,8 @@ const PaymentFragment = ({ incrementFragmentNo }) => {
       <PaymentCard
         url1="https://banner2.cleanpng.com/20180802/xri/kisspng-logo-mastercard-vector-graphics-font-visa-mastercard-logo-png-photo-png-arts-5b634298cd58d5.9008352515332317688411.jpg"
         url2="https://w7.pngwing.com/pngs/618/512/png-transparent-visa-logo-mastercard-credit-card-payment-visa-blue-company-text.png"
-        text1="Axis Bank *** **** **** 8395"
-        text2="Galx Bank *** **** **** 8395"
+        text1="MasterCard Credit/Debit Card"
+        text2="Visa Credit/Debit Card"
         isNeeded="true"
       />
       <div className="my-8 mx-8">

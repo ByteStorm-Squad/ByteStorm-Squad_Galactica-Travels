@@ -2,6 +2,7 @@ import React from 'react';
 import Button from '../../components/Button/Button';
 import TextBox from '../../components/TextBox/TextBox';
 import SeatPicker from '../../components/SeatPicker/SeatPicker';
+import DropDownList from '../../components/DropDownList/DropDownList';
 
 const TravelFragment = ({ incrementFragmentNo }) => {
   return (
@@ -12,7 +13,7 @@ const TravelFragment = ({ incrementFragmentNo }) => {
       <div className="my-8 mx-8 text-gray-300">
         <h3>Passenger 1</h3>
       </div>
-      <TextBox text={'Travel Class'} />
+      <DropDownList label={'Travel Class'} dropdownlist={['Platinum Member', 'Gold Member']} />
       <SeatPicker />
       <div className="flex justify-center">
         <Button text="Continue" type="full" onClick={incrementFragmentNo} />
