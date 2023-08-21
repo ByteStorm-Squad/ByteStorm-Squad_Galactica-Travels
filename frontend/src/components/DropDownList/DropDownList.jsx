@@ -4,7 +4,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
-const DropDownList = ({ label, dropdownlist }) => {
+const DropDownList = ({ label, value, optionList, onChange }) => {
   const rectangleStyle = {
     backgroundColor: '#1c1c1d',
     borderBottomWidth: '2px',
@@ -24,7 +24,6 @@ const DropDownList = ({ label, dropdownlist }) => {
     fontSize: '15px',
     outline: 'none', // Remove default focus outline
   };
-  const ageOptions = dropdownlist;
 
   return (
     <div className="mx-8 my-5">
@@ -33,10 +32,10 @@ const DropDownList = ({ label, dropdownlist }) => {
           <InputLabel id="demo-simple-select-label" style={labelStyle}>
             {label}
           </InputLabel>
-          <Select labelId="demo-simple-select-label" id="demo-simple-select" label="Age" style={labelStyle}>
-            {ageOptions.map(age => (
-              <MenuItem key={age} value={age}>
-                {age}
+          <Select labelId="demo-simple-select-label" id="demo-simple-select" style={labelStyle} value={value} onChange={onChange}>
+            {optionList.map(option => (
+              <MenuItem key={option} value={option}>
+                {option}
               </MenuItem>
             ))}
           </Select>

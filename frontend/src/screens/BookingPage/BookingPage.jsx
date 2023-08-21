@@ -16,6 +16,7 @@ const BookingPage = () => {
     destination: '',
     availableJourneys: [],
     selectedJourney: '',
+    selectedSeats: ['10C'],
   });
   const navigate = useNavigate();
 
@@ -48,7 +49,9 @@ const BookingPage = () => {
       );
       break;
     case 2:
-      selectedFragment = <PassengersFragment incrementFragmentNo={incrementFragmentNo} />;
+      selectedFragment = (
+        <PassengersFragment incrementFragmentNo={incrementFragmentNo} bookingData={bookingData} setBookingData={setBookingData} />
+      );
       break;
     case 3:
       selectedFragment = <TravelFragment incrementFragmentNo={incrementFragmentNo} />;

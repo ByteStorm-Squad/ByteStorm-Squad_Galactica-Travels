@@ -1,5 +1,6 @@
 import React from 'react';
 import JourneyCard from '../../components/JourneyCard/JourneyCard';
+import { formatSQLDateTime } from '../../utils/formatters';
 
 const JourneysFragment = ({ incrementFragmentNo, bookingData, setBookingData }) => {
   const onSelectJourney = journeyID => {
@@ -21,7 +22,7 @@ const JourneysFragment = ({ incrementFragmentNo, bookingData, setBookingData }) 
           departure={bookingData.departure}
           destination={bookingData.destination}
           status={journey.flight_status}
-          departure_time={journey.departure_date}
+          departure_time={formatSQLDateTime(journey.departure_date)}
           onClick={() => onSelectJourney(journey.journey_id)}
         />
       ))}

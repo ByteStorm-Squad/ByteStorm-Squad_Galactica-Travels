@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const TextBox = props => {
-  const { text, type, onChange, ownerState, inputProps, InputProps, error, ...otherProps } = props;
+  const { text, type, outerClassName = 'mx-8 my-5', onChange, ownerState, inputProps, InputProps, error, ...otherProps } = props;
 
   const rectangleStyle = {
     backgroundColor: '#1c1c1d',
@@ -25,7 +25,7 @@ const TextBox = props => {
   };
 
   return (
-    <div className="mx-8 my-5">
+    <div className={outerClassName}>
       <div style={rectangleStyle}>
         <input type={type} onChange={onChange} placeholder={text} style={inputStyle} {...otherProps} />
       </div>

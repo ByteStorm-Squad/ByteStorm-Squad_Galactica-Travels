@@ -1,32 +1,34 @@
 import React from 'react';
 import { useState } from 'react';
-import Arrow from '../../images/Arrow2.png';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import ComponentSlider from '../../components/ComponentSlider/ComponentSlider';
-import { WindupChildren } from 'windups';
 
 import img1 from '../../images/Slider/Google.png';
 import img2 from '../../images/Slider/Insta.png';
 import img3 from '../../images/Slider/Facebook.png';
-import img4 from '../../images/Slider/Twitter.png';
+import img4 from '../../images/Slider/Microsoft.png';
+import TextBox from '../../components/TextBox/TextBox';
+import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
+  const containerClasses = 'flex flex-col justify-center items-center bg-none p-6 rounded-3xl';
   const items = [
-    <div style={{ backgroundColor: 'white', width: 200, padding: 20, borderRadius: 10 }}>
-      <img src={img1} style={{ height: 100, width: 150 }} />
-      <h1 style={{ marginLeft: 55 }}>Google</h1>
+    <div className={containerClasses}>
+      <img src={img1} className="w-[120px] mb-2" />
+      <h1>Google</h1>
     </div>,
-    <div style={{ backgroundColor: 'white', width: 200, padding: 20, borderRadius: 10 }}>
-      <img src={img2} style={{ height: 100, width: 150 }} />
-      <h1 style={{ marginLeft: 55 }}>Instagram</h1>
+    <div className={containerClasses}>
+      <img src={img2} className="w-[120px] mb-2" />
+      <h1>Instagram</h1>
     </div>,
-    <div style={{ backgroundColor: 'white', width: 200, padding: 20, borderRadius: 10 }}>
-      <img src={img3} style={{ height: 100, width: 150 }} />
-      <h1 style={{ marginLeft: 55 }}>Facebook</h1>
+    <div className={containerClasses}>
+      <img src={img3} className="w-[120px] mb-2" />
+      <h1>Facebook</h1>
     </div>,
-    <div style={{ backgroundColor: 'white', width: 200, padding: 20, borderRadius: 10 }}>
-      <img src={img4} style={{ height: 100, width: 150 }} />
-      <h1 style={{ marginLeft: 55 }}>Twitter</h1>
+    <div className={containerClasses}>
+      <img src={img4} className="w-[120px] mb-2" />
+      <h1>Microsoft</h1>
     </div>,
   ];
 
@@ -46,44 +48,20 @@ const LoginPage = () => {
   return (
     <div>
       <PageHeader title={'Login'} />
-      <div style={{ justifyContent: 'center', padding: 40, backgroundColor: 'white', opacity: 0.8, margin: 6, borderRadius: 10 }}>
-        <WindupChildren>
-          {'Welcome to the Intergalactic Travelling'}
-          {'Explore the Universe'}
-        </WindupChildren>
-        <h1 style={{ color: 'white', marginTop: 10 }}>Enter the your mail:</h1>
-        <div style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
-          <img src={Arrow} style={{ width: 30, height: 20, color: 'white', marginTop: 8, display: iscorrect ? 'none' : 'block' }} />
-          <input type="text" style={{ borderColor: 'white', width: 300, height: 40 }} onChange={e => setEmail(e.target.value)} />
-        </div>
-
-        <h4 style={{ color: 'white', display: iscorrect ? 'flex' : 'none' }}>Enter the Passwors</h4>
-        <div style={{ flexDirection: 'row', display: iscorrect ? 'flex' : 'none' }}>
-          <img src={Arrow} style={{ width: 30, height: 20, color: 'white', marginTop: 8, display: isLogged ? 'none' : 'block' }} />
-          <input type="text" style={{ borderColor: 'white', width: 300, height: 40 }} onChange={e => setPassword(e.target.value)} />
-        </div>
-
-        <button
-          style={{
-            backgroundColor: 'white',
-            opacity: 0.8,
-            marginLeft: 60,
-            marginTop: 15,
-            padding: 10,
-            borderWidth: 2,
-            borderColor: 'white',
-            borderRadius: 8,
-            width: 200,
-          }}
-          onClick={handleLogin}
-        >
-          Continue
-        </button>
+      <div className="text-white text-3xl font-semibold text-center mb-8">Alternative Verification</div>
+      <div className="flex flex-col justify-center items-center gap-5 mx-5 mb-10 rounded-3xl h-[300px] bg-white/10">
+        <TextBox text="Email*" type="email" outerClassName="w-[90%]" />
+        <TextBox text="Password*" type="password" outerClassName="w-[90%]" />
+        <Link to="/">
+          <Button text="Login" type="stroke" />
+        </Link>
+        <Link to="/signup">
+          <span className="underline">Create new Account</span>
+        </Link>
       </div>
-
       <hr style={{ backgroundColor: 'white' }}></hr>
 
-      <ComponentSlider components={items} />
+      <ComponentSlider components={items} className="bg-white/10" />
     </div>
   );
 };

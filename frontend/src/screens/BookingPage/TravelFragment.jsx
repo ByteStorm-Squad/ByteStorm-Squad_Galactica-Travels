@@ -10,10 +10,6 @@ const TravelFragment = ({ incrementFragmentNo }) => {
       <div className="my-8 mx-8">
         <h2>Travel Details</h2>
       </div>
-      <div className="my-8 mx-8 text-gray-300">
-        <h3>Passenger 1</h3>
-      </div>
-      <DropDownList label={'Travel Class'} dropdownlist={['Platinum Member', 'Gold Member']} />
       <SeatPicker />
       <div className="flex justify-center">
         <Button text="Continue" type="full" onClick={incrementFragmentNo} />

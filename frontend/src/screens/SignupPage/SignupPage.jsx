@@ -15,11 +15,11 @@ export const SignupPage = () => {
   const [selectedLastName, setSelectedLastName] = React.useState('');
   const [selectedEmail, setSelectedEmail] = React.useState('');
   const [selectedPassword, setSelectedPassword] = React.useState('');
-  const [selectedGender, setSelectedGender] = React.useState('Male');
-  const [selectedDOB, setSelectedDOB] = React.useState('08/20/2023');
+  const [selectedGender, setSelectedGender] = React.useState('');
+  const [selectedDOB, setSelectedDOB] = React.useState('');
   const [selectedIGID, setSelectedIGID] = React.useState('');
   const [selectedContactID, setSelectedContactID] = React.useState('');
-  const [selectedGalaxy, setSelectedGalaxy] = React.useState('Andromeda');
+  const [selectedGalaxy, setSelectedGalaxy] = React.useState('');
 
   const handleSignUp = async () => {
     const userDetails = {
@@ -68,11 +68,11 @@ export const SignupPage = () => {
       <TextBox text="Last Name*" value={selectedLastName} onChange={e => setSelectedLastName(e.target.value)} />
       <TextBox text="Email*" value={selectedEmail} onChange={e => setSelectedEmail(e.target.value)} />
       <TextBox type="password" text="Password*" value={selectedPassword} onChange={e => setSelectedPassword(e.target.value)} />
-      <DropDownList label="Gender" dropdownlist={GenderList} value={selectedGender} onChange={e => setSelectedGender(e.target.value)} />
+      <DropDownList label="Gender" optionList={GenderList} value={selectedGender} onChange={e => setSelectedGender(e.target.value)} />
       <DateField text={'Date of Birth *'} value={selectedDOB} onChange={e => setSelectedDOB(e.target.value)} />
       <TextBox text="Inter Galactic ID" value={selectedIGID} onChange={e => setSelectedIGID(e.target.value)} />
       <TextBox text="Contact Identifier" value={selectedContactID} onChange={e => setSelectedContactID(e.target.value)} />
-      <DropDownList label="Home Location" dropdownlist={Galaxy} value={selectedGalaxy} onChange={e => setSelectedGalaxy(e.target.value)} />
+      <DropDownList label="Home Location" optionList={Galaxy} value={selectedGalaxy} onChange={e => setSelectedGalaxy(e.target.value)} />
       <div className="flex justify-center">
         <Link to="/dashboard">
           <Button text="Submit" type="full" onClick={handleSignUp} method="POST" />

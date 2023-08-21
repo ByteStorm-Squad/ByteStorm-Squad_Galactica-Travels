@@ -4,7 +4,7 @@ import SeatRow from './SeatRow';
 import './styles.css';
 
 const seatMap = {};
-for (let i = 0; i < 10; i++) {
+for (let i = 1; i <= 10; i++) {
   ['A', 'B', 'C', 'D', 'E', 'F'].forEach(letter => {
     if (seatMap[i]) {
       seatMap[i][letter] = Math.random() < 0.3;
@@ -13,6 +13,7 @@ for (let i = 0; i < 10; i++) {
     }
   });
 }
+seatMap[10]['C'] = false;
 export default function SeatPicker() {
   const [selectedSeat, setSelectedSeat] = useState(null);
 

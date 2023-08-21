@@ -5,6 +5,7 @@ import PageHeader from '../../components/PageHeader/PageHeader';
 import FaceDetector from '../../components/FaceDetector/FaceDetector';
 import UserCard from './UserCard';
 import Button from '../../components/Button/Button';
+import { Link } from 'react-router-dom';
 
 const BioLoginPage = () => {
   const [detected, setDetected] = useState(0);
@@ -18,7 +19,9 @@ const BioLoginPage = () => {
       <div className="text-white text-3xl font-semibold text-center my-3">Biometric Verification</div>
       <UserCard name="Damika Anupama" age="23" gender="Male" percentage={(detected * 100).toFixed(0)} />
       <div className="flex justify-center items-center p-10 mx-5 my-10 rounded-3xl h-[50px]  bg-white/10">
-        <Button text="Other Login Methods" type="stroke" />
+        <Link to="/login">
+          <Button className="button stroke px-4 w-full" text="Alternative Verification" type="stroke" />
+        </Link>
       </div>
     </>
   );

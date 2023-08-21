@@ -44,7 +44,7 @@ const AttractionSlider = ({ components }) => {
           <SwiperSlide
             key={index}
             style={{
-              height: '350px',
+              height: '440px',
               width: '250px',
               display: 'flex',
               justifyContent: 'center',
@@ -52,7 +52,14 @@ const AttractionSlider = ({ components }) => {
               margin: '20px',
             }}
           >
-            <AttractionSlide image={item.image} description={item.description} showDescription={activeSlide == index} />
+            <AttractionSlide
+              tag={item.tag}
+              tagColor={item.tagColor}
+              image={item.image}
+              title={item.title}
+              description={item.description}
+              showDescription={activeSlide == index}
+            />
           </SwiperSlide>
         ))}
       </Swiper>
