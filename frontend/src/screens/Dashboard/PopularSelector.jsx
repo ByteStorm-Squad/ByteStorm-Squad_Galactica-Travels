@@ -13,16 +13,16 @@ const PopularSelector = () => {
     justifyContent: 'center',
   };
   return (
-    <div className="w-full flex flex-grow justify-evenly mb-8">
-      <div style={containerStyle}>
+    <div className="w-full flex flex-grow justify-evenly">
+      {/* <div style={containerStyle}>
         <div className="text-white text-sm font-semibold left-0 tracking-normal">Upcoming</div>
-      </div>
+      </div> */}
       <div style={containerStyle}>
         <div className="text-white text-sm font-semibold left-0 tracking-normal">Popular</div>
       </div>
-      <div style={containerStyle}>
+      {/* <div style={containerStyle}>
         <div className="text-white text-sm font-semibold left-0 tracking-normal">Highly Rated</div>
-      </div>
+      </div> */}
     </div>
   );
 };

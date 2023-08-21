@@ -18,7 +18,7 @@ const AttractionSlider = ({ components }) => {
   };
 
   return (
-    <div style={{ marginTop: 20 }} className="bg-white/10">
+    <div className="bg-white/10">
       <Swiper
         modules={[EffectCoverflow, Pagination, Navigation, A11y, Scrollbar]}
         effect={'coverflow'}
@@ -41,7 +41,17 @@ const AttractionSlider = ({ components }) => {
         onSlideChange={handleSlideChange}
       >
         {components.map((item, index) => (
-          <SwiperSlide key={index} style={{ height: 350, width: 250, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <SwiperSlide
+            key={index}
+            style={{
+              height: '350px',
+              width: '250px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              margin: '20px',
+            }}
+          >
             <AttractionSlide image={item.image} description={item.description} showDescription={activeSlide == index} />
           </SwiperSlide>
         ))}

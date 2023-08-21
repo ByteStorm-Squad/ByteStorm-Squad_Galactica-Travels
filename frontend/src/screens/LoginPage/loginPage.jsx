@@ -1,9 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import Typed from 'react-typed';
 import Arrow from '../../images/Arrow2.png';
 import PageHeader from '../../components/PageHeader/PageHeader';
 import ComponentSlider from '../../components/ComponentSlider/ComponentSlider';
+import { WindupChildren } from 'windups';
 
 import img1 from '../../images/Slider/Google.png';
 import img2 from '../../images/Slider/Insta.png';
@@ -47,8 +47,10 @@ const LoginPage = () => {
     <div>
       <PageHeader title={'Login'} />
       <div style={{ justifyContent: 'center', padding: 40, backgroundColor: 'white', opacity: 0.8, margin: 6, borderRadius: 10 }}>
-        <Typed strings={['Welcome to the Intergalactic Travelling', 'Explore the Universe']} typeSpeed={60} backSpeed={60} F loop />
-
+        <WindupChildren>
+          {'Welcome to the Intergalactic Travelling'}
+          {'Explore the Universe'}
+        </WindupChildren>
         <h1 style={{ color: 'white', marginTop: 10 }}>Enter the your mail:</h1>
         <div style={{ display: 'flex', flexDirection: 'row', marginBottom: 10 }}>
           <img src={Arrow} style={{ width: 30, height: 20, color: 'white', marginTop: 8, display: iscorrect ? 'none' : 'block' }} />

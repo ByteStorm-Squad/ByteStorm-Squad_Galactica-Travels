@@ -16,7 +16,6 @@ const AttractionSlide = ({ image, description, showDescription = true }) => {
     fontSize: '15px',
     fontWeight: 600,
     textAlign: 'center',
-    width: '100%',
     opacity: 1,
     transition: 'opacity 0.3s ease',
   };
@@ -28,7 +27,6 @@ const AttractionSlide = ({ image, description, showDescription = true }) => {
     fontSize: '15px',
     fontWeight: 600,
     textAlign: 'center',
-    width: '100%',
     opacity: 0,
     transition: 'opacity 0.4s ease',
   };

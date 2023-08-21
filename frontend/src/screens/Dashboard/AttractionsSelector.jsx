@@ -14,7 +14,7 @@ const AttractionsSelector = () => {
     justifyContent: 'center',
   };
   return (
-    <div className="w-full flex flex-grow justify-evenly mb-8">
+    <div className="flex flex-grow justify-center gap-3 mb-8 w-full">
       <div style={containerStyle}>
         <div className="text-white text-base font-semibold left-0 tracking-normal">Events</div>
       </div>
