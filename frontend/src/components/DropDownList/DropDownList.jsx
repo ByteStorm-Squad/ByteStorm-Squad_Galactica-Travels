@@ -32,7 +32,26 @@ const DropDownList = ({ label, value, optionList, onChange }) => {
           <InputLabel id="demo-simple-select-label" style={labelStyle}>
             {label}
           </InputLabel>
-          <Select labelId="demo-simple-select-label" id="demo-simple-select" style={labelStyle} value={value} onChange={onChange}>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            sx={{
+              color: '#ffffff',
+              '&.MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: 'transparent',
+                },
+                '&:hover fieldset': {
+                  borderColor: 'transparent',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: 'transparent',
+                },
+              },
+            }}
+            value={value}
+            onChange={onChange}
+          >
             {optionList.map(option => (
               <MenuItem key={option} value={option}>
                 {option}
