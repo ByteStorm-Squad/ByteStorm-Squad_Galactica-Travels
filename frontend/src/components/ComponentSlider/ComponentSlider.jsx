@@ -9,9 +9,9 @@ import 'swiper/css/navigation';
 
 import { Pagination, Navigation, EffectCoverflow, Scrollbar, A11y } from 'swiper/modules';
 
-const ComponentSlider = ({ components }) => {
+const ComponentSlider = ({ components, ...otherProps }) => {
   return (
-    <div style={{ marginTop: 30 }} className="bg-white/10">
+    <div style={{ marginTop: 30 }} {...otherProps}>
       <Swiper
         modules={[EffectCoverflow, Pagination, Navigation, A11y, Scrollbar]}
         effect={'coverflow'}
@@ -33,7 +33,10 @@ const ComponentSlider = ({ components }) => {
         }}
       >
         {components.map((item, index) => (
-          <SwiperSlide key={index} style={{ height: 400, width: 250, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <SwiperSlide
+            key={index}
+            style={{ height: 200, width: 250, display: 'flex', justifyContent: 'center', alignItems: 'center', background: 'none' }}
+          >
             {item}
           </SwiperSlide>
         ))}
