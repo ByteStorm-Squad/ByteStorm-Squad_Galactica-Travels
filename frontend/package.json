@@ -28,7 +28,8 @@
     "recharts": "^2.7.3",
     "styled-components": "^6.0.7",
     "swiper": "^10.2.0",
-    "windups": "^1.2.1"
+    "windups": "^1.2.1",
+    "face-api.js": "0.22.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",

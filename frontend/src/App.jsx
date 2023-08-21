@@ -10,7 +10,8 @@ import MapPage from './screens/MapPage/MapPage';
 import Profile from './screens/Profile/Profile';
 import Explorepage from './screens/ExplorePage/ExplorePage';
 import SignupPage from './screens/SignupPage/SignupPage';
-import LoginPage from './screens/LoginPage/loginPage';
+import LoginPage from './screens/LoginPage/LoginPage';
+import BioLoginPage from './screens/LoginPage/BioLoginPage';
 
 const App = () => {
   return (
@@ -27,7 +28,7 @@ const App = () => {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignupPage />} />
         <Route path="/signup2" element={<SignupPage2 />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<BioLoginPage />} />
       </Routes>
     </>
   );
