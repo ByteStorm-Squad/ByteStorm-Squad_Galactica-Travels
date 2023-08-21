@@ -11,10 +11,9 @@ import {
 
 const wait = time => new Promise(resolve => setTimeout(resolve, time));
 
-const FaceDetector = () => {
+const FaceDetector = ({ setDetected }) => {
   const [video, setVideo] = useState(null);
   const [canvas, setCanvas] = useState(null);
-  const [detected, setDetected] = useState(false);
   const [camera, setCamera] = useState(false);
   const [loading, setLoading] = useState(false);
   const videoRef = useRef(null);
@@ -50,7 +49,7 @@ const FaceDetector = () => {
         const faces = await detectSingleFace(video, getFaceDetectorOptions()).withFaceLandmarks(true);
         setLoading(false);
         if (faces) {
-          setDetected(true);
+          setDetected(faces.detection._score);
           const dims = matchDimensions(canvas, video, true);
           const resizedResults = resizeResults(faces, dims);
           if (true) {
@@ -60,7 +59,7 @@ const FaceDetector = () => {
             draw.drawFaceLandmarks(canvas, resizedResults);
           }
         } else {
-          setDetected(false);
+          setDetected(0);
           ctx.clearRect(0, 0, video.videoWidth, video.videoHeight);
         }
       }
@@ -104,6 +103,9 @@ const FaceDetector = () => {
           style={{
             padding: 20,
             fontSize: 14,
+            borderRadius: 10,
+            borderColor: 'white',
+            borderWidth: 2,
           }}
           onClick={() => {
             start();
@@ -133,7 +135,6 @@ const FaceDetector = () => {
           Loading
         </div>
       )}
-      {camera && <h2>Face Detected : {detected ? 'True' : 'False'}</h2>}
     </div>
   );
 };

@@ -10,7 +10,6 @@ import MapPage from './screens/MapPage/MapPage';
 import Profile from './screens/Profile/Profile';
 import Explorepage from './screens/ExplorePage/ExplorePage';
 import SignupPage from './screens/SignupPage/SignupPage';
-import LoginPage from './screens/LoginPage/LoginPage';
 import BioLoginPage from './screens/LoginPage/BioLoginPage';
 
 const App = () => {
