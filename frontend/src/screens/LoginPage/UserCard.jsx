@@ -23,9 +23,9 @@ const UserCard = ({ name, percentage, age, gender }) => {
           </>
         ) : (
           <>
-            <span className="text-red-400 text-center">Verification</span>
-            <span className="text-red-400 text-center">Percentage</span>
-            <span className="text-red-400 text-center">Too Low</span>
+            <span className="text-red-400 text-center mr-8">Verification</span>
+            <span className="text-red-400 text-center mr-8">Percentage</span>
+            <span className="text-red-400 text-center mr-8">Too Low</span>
           </>
         )}
       </div>
