@@ -6,9 +6,27 @@ import PassengersFragment from './PassengersFragment';
 import TravelFragment from './TravelFragment';
 import JourneysFragment from './JourneysFragment';
 import PaymentFragment from './PaymentFragment';
+import { useNavigate } from 'react-router-dom';
 
 const BookingPage = () => {
   const [fragmentNo, setFragmentNo] = useState(0);
+  const [bookingData, setBookingData] = useState({
+    passengerCount: 1,
+    departure: '',
+    destination: '',
+    availableJourneys: [],
+    selectedJourney: '',
+    selectedSeats: ['10C'],
+  });
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    if (fragmentNo > 0) {
+      decrementFragmentNo();
+    } else {
+      navigate(-1);
+    }
+  };
 
   const incrementFragmentNo = () => {
     setFragmentNo(fragmentNo + 1);
@@ -21,13 +39,19 @@ const BookingPage = () => {
   let selectedFragment;
   switch (fragmentNo) {
     case 0:
-      selectedFragment = <InitialFragment incrementFragmentNo={incrementFragmentNo} />;
+      selectedFragment = (
+        <InitialFragment incrementFragmentNo={incrementFragmentNo} bookingData={bookingData} setBookingData={setBookingData} />
+      );
       break;
     case 1:
-      selectedFragment = <JourneysFragment incrementFragmentNo={incrementFragmentNo} />;
+      selectedFragment = (
+        <JourneysFragment incrementFragmentNo={incrementFragmentNo} bookingData={bookingData} setBookingData={setBookingData} />
+      );
       break;
     case 2:
-      selectedFragment = <PassengersFragment incrementFragmentNo={incrementFragmentNo} />;
+      selectedFragment = (
+        <PassengersFragment incrementFragmentNo={incrementFragmentNo} bookingData={bookingData} setBookingData={setBookingData} />
+      );
       break;
     case 3:
       selectedFragment = <TravelFragment incrementFragmentNo={incrementFragmentNo} />;
@@ -41,7 +65,7 @@ const BookingPage = () => {
 
   return (
     <>
-      <PageHeader title="Booking" />
+      <PageHeader title="Booking" onBackPress={handleBack} />
       <PageIndicator pageNo={fragmentNo} />
       {selectedFragment}
     </>

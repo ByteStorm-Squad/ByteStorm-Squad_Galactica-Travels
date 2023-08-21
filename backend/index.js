@@ -15,6 +15,13 @@ app.use(bodyParser.json());
 // Get all files in the routes folder
 const files = fs.readdirSync('./src/routes');
 
+// Accept these headers to avoid CORS errors on the client side
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 // Loop through each file and require it
 files.forEach(file => {
   const routes = require(`./src/routes/${file}`);
@@ -37,6 +44,10 @@ app.use(function (req, res, next) {
 app.use('/docs', swaggerUI.serve, swaggerUI.setup(swaggerSpecs));
 // support parsing of application/json type post data
 
-app.listen(HOST, PORT, () => {
-  console.log(`Server running on host:port ${HOST}:${PORT}!`);
+// app.listen(HOST, PORT, () => {
+//   console.log(`Server running on host:port ${HOST}:${PORT}!`);
+// });
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}!`);
 });
