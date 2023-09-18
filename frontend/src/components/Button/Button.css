@@ -16,8 +16,10 @@
 
 .button.stroke {
   border: 2px solid;
-  border-color: var(--solid-coloursbutton-stroke);
+  border-color: #ff9900;
   box-shadow: 1px 1px 0px #5921cb;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .button.full {

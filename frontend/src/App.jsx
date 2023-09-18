@@ -2,13 +2,14 @@ import React from 'react';
 import { NavMenu, Background } from './components';
 import { Routes, Route } from 'react-router-dom';
 import Dashboard from './screens/Dashboard/Dashboard';
-import AccountPage from './screens/AccountPage/AccountPage';
 import BookingPage from './screens/BookingPage/BookingPage';
-import { SignupPage } from './screens/SignupPage/SignupPage';
 import JourneysPage from './screens/JourneysPage/JourneysPage';
 import MapPage from './screens/MapPage/MapPage';
 import Profile from './screens/Profile/Profile';
 import Explorepage from './screens/ExplorePage/ExplorePage';
+import SignupPage from './screens/SignupPage/SignupPage';
+import BioLoginPage from './screens/LoginPage/BioLoginPage';
+import LoginPage from './screens/LoginPage/LoginPage';
 
 const App = () => {
   return (
@@ -22,7 +23,10 @@ const App = () => {
         <Route path="/journeys" element={<JourneysPage />} />
         <Route path="/map" element={<MapPage />} />
         <Route path="/explore" element={<Explorepage />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/signup" element={<SignupPage />} />
+        <Route path="/biologin" element={<BioLoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
       </Routes>
     </>
   );
