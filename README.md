@@ -1,5 +1,8 @@
 # ByteStorm-Squad_Galactica-Travels
 
+![image](https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/assets/101160077/caf2605d-128c-4667-8fe7-70bc9e481200)
+
+
 ## Setup the Back End
 
 1. Install PostGres from https://www.enterprisedb.com/downloads/postgres-postgresql-downloads with default Configuration
