@@ -3,14 +3,13 @@ const router = express.Router();
 //registrationController to access RegisteredUser Table
 const registrationController = require('../controllers/registration.controller.js');
 const checkRole = require("../middleware/auth.js");
-
-router.get("/register", function (req, res) {
-    res.render("register", { docTitle: "USER REGISTRATION", userRole: req.cookies.userRole });
+ 
+router.get("/register", function(req, res){
+    res.render("register", {docTitle: "USER REGISTRATION", userRole: req.cookies.userRole});
 });
 
-router.post("/register", function (req, res) {
+router.post("/register", function(req, res){
     registrationController.createRegisteredUser(req, res);
-
 });
 
 

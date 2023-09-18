@@ -15,13 +15,6 @@ app.use(bodyParser.json());
 // Get all files in the routes folder
 const files = fs.readdirSync('./src/routes');
 
-// Accept these headers to avoid CORS errors on the client side
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
-  res.header("Access-Control-Allow-Headers", "Authorization, Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 // Loop through each file and require it
 files.forEach(file => {
   const routes = require(`./src/routes/${file}`);
