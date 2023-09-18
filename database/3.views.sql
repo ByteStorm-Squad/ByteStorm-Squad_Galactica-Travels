@@ -1,5 +1,3 @@
-
-
 CREATE OR REPLACE VIEW Search_View AS 
 SELECT 
     fs.Journey_ID AS flight_id,

@@ -49,7 +49,7 @@ exports.createRegisteredUser = (req, res) => {
     res.status(400).send({ message: "Content cannot be empty!" });
     return;
   }
-
+  
   bcrypt.hash(req.body.password, saltRounds, function (err, hash) {
     // Create a new registered user
     const registeredUser = new RegisteredUser({
@@ -78,7 +78,7 @@ exports.createRegisteredUser = (req, res) => {
       }
       else {
         // Display a successful creation box
-        res.status(200).send("<p>User created successfully! Redirecting to login page in 3 seconds...</p>" +
+        res.send("<p>User created successfully! Redirecting to login page in 3 seconds...</p>" +
           "<script>setTimeout(function () { window.location.href = '/login'; }, 3000);</script>");
       }
     });

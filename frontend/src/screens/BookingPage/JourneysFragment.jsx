@@ -1,31 +1,27 @@
 import React from 'react';
+import Button from '../../components/Button/Button';
 import JourneyCard from '../../components/JourneyCard/JourneyCard';
-import { formatSQLDateTime } from '../../utils/formatters';
 
-const JourneysFragment = ({ incrementFragmentNo, bookingData, setBookingData }) => {
-  const onSelectJourney = journeyID => {
-    incrementFragmentNo();
-    setBookingData({ ...bookingData, selectedJourney: journeyID });
-    console.log(bookingData);
-  };
-
+const JourneysFragment = ({ incrementFragmentNo }) => {
   return (
     <>
       <div className="my-8 mx-8">
         <h2>Available Journeys</h2>
       </div>
-      {bookingData.availableJourneys.map(journey => (
-        <JourneyCard
-          key={journey.journey_id}
-          spaceship={`Cruiser Class ${journey.spacecraft_id}`}
-          journeyCode={journey.journey_id}
-          departure={bookingData.departure}
-          destination={bookingData.destination}
-          status={journey.flight_status}
-          departure_time={formatSQLDateTime(journey.departure_date)}
-          onClick={() => onSelectJourney(journey.journey_id)}
-        />
-      ))}
+      <JourneyCard
+        spaceship={'Cruiser Class II'}
+        journeyCode={'F01'}
+        departure={'1/1/2023 4PM'}
+        arrival={'5/1/2023 7PM'}
+        onClick={incrementFragmentNo}
+      />
+      <JourneyCard
+        spaceship={'Voyager Class I'}
+        journeyCode={'F02'}
+        departure={'2/1/2023 4PM'}
+        arrival={'4/1/2023 7PM'}
+        onClick={incrementFragmentNo}
+      />
     </>
   );
 };

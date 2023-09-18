@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Home, Person, SpaceDashboard, RocketLaunch, Map, WbSunny } from '@mui/icons-material';
-import { Link } from 'react-router-dom';
 import './styles.css';
-import sun from '../../images/navmenu/sun.png';
+import { Link } from 'react-router-dom';
 
 const NavMenu = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,7 +14,7 @@ const NavMenu = () => {
     <nav className={isMenuOpen ? 'open bg-black bg-opacity-80' : 'bg-none'}>
       <div className="nav-content">
         <div className="toggle-btn" onClick={toggleMenuOpen}>
-          <img src={sun} className="bg-[#FFDC2680] rounded-full w-16" />
+          <WbSunny />
         </div>
         <span style={{ '--i': 1 }}>
           <div>

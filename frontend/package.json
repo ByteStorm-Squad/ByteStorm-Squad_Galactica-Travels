@@ -16,21 +16,17 @@
     "@mui/x-date-pickers": "^6.11.2",
     "axios": "^0.27.2",
     "dayjs": "^1.11.9",
-    "face-api.js": "0.22.1",
-    "framer-motion": "^10.16.0",
     "react": "^18.2.0",
     "react-alice-carousel": "^2.7.1",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.1",
-    "react-icomoon": "^2.5.7",
     "react-router-dom": "^6.3.0",
     "react-semicircle-progressbar": "^1.1.0",
     "recharts": "^2.7.3",
-    "styled-components": "^6.0.7",
-    "sweetalert2": "^11.7.27",
     "swiper": "^10.2.0",
-    "windups": "^1.2.1"
+    "sweetalert2": "^11.4.17",
+    "sweetalert2-react-content": "^5.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.0.17",
