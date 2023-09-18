@@ -1,51 +1,65 @@
-# ByteStorm-Squad_Galactica-Travels
+<a name="readme-top"></a>
 
-![image](https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/assets/101160077/caf2605d-128c-4667-8fe7-70bc9e481200)
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
 
 
-## Setup the Back End
 
-1. Install PostGres from https://www.enterprisedb.com/downloads/postgres-postgresql-downloads with default Configuration
-2. run the database dump in psql shell in this order (1.ddl.sql, 2.dml.sql, 3.views.sql)
-3. run in backend directory```bash
-npm install 
-4. setup .env file from example in config folder
-5. npm run dev
-6. check endpoints on localhost:8080/src
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels">
+    <img src="asset/Web capture_20-8-2023_23181_www.figma.com.jpeg" alt="Logo" width="200" height="200">
+  </a>
 
-Open [http://localhost:8080/docs] with your browser to see to test the backend apis.
+  <h1 align="center">Galactica-Travels</h1>
 
-## Setup the Front End
+  <p align="center">
+    ByteStorm-Squad
+    <br />
+  </p>
+</div>
 
-### ViteJS [https://vitejs.dev/] (https://vitejs.dev/)!
 
-### TailwindCSS [https://tailwindcss.com/](https://tailwindcss.com/)!
 
-# Required Packages:
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#license">License</a></li>
+  </ol>
+</details>
 
-```bash
-npm npm create vite@latest
-                  ## or
-yarn create vite
 
-npm install react-react-router-dom
-          ## or
-yarn add react-react-router-dom
-```
 
-## Getting Started
+<!-- ABOUT THE PROJECT -->
+## About The Project
+<div align="center">
+  <img src="asset/Pasted%20image.png" alt="Logo" width="250">
+</div>
 
-First, run the development server:
+Intergalactic organization has embarked on an ambitious journey to simplify interplanetary travel. Galactica Travels is a web-based mobile-responsive application designed to provide a seamless user experience for citizens traveling from one planet to another.
 
-```bash
-npm install
-# or
-yarn instll
+Here's why Galactica Travels is the go-to solution for space travel:
+* **Simplicity**: Booking interplanetary travel tickets has never been easier.
+* **Intuitive Design**: A step-by-step guide through the booking process.
+* **Compare and Choose**: Search and compare travel options by mode, destination, price, and departure date.
+* **Know Your Destination**: View detailed information about your destination, including climate, culture, and popular tourist attractions.
+* **Secure Payment**: Enter personal information and payment details with ease.
+* **Access Anytime**: Your booking information is always at your fingertips.
 
-# and Now:
 
-<<<<<<< Updated upstream
-=======
 <p align="right"><a href="#readme-top">back to top</a></p>
 
 
@@ -87,8 +101,6 @@ Galactica Travels is designed to provide a seamless experience for interplanetar
 - [ ] Integrate Secure Payment Gateway
 - [ ] Enhance User Profile Management
 - [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
 
 See the [open issues](https://github.com/ByteStorm-Squad/ByteStorm-Squad_Galactica-Travels/issues) for a full list of proposed features (and known issues).
 
@@ -180,9 +192,8 @@ First, run the development server:
 ```bash
 npm install
 # or
-yarn instll
+yarn install
 
 # and Now:
 
->>>>>>> Stashed changes
 npm run dev
